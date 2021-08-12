@@ -1,5 +1,15 @@
 .main-content{
   background-image: url('../images/PrivateerWhiteLogo.png');
-  height: 100%; 
+  height: 90vh; 
   width: auto;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.small-image{
+  height: 150px;
+  width: 300px;
+  object-fit: fill;
+  float: right;
 }
