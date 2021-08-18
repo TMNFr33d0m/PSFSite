@@ -4,5 +4,5 @@ function setContent(pagename){
 }
 
 function webmail (){
-    var webamilAddress = 'https://gator4188.hostgator.com:2096/'
+    var webmailAddress = 'https://gator4188.hostgator.com:2096/'
 }
