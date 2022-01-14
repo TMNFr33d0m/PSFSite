@@ -6,10 +6,3 @@
   background-attachment: fixed;
   background-position: center;
 }
-
-.small-image{
-  height: 150px;
-  width: 300px;
-  object-fit: fill;
-  float: right;
-}
