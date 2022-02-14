@@ -4,15 +4,13 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
 	<url>
 	  <loc>http://www.privateersecurity.com/</loc>
 	  <lastmod>2021-08-25T02:10:17+00:00</lastmod>
 	</url>
 
 	<url>
-	  <loc>http://www.privateersecurity.com/welcome.html</loc>
+	  <loc>http://www.privateersecurity.com/index.html</loc>
 	  <lastmod>2021-08-25T02:10:17+00:00</lastmod>
 	</url>
 
@@ -22,12 +20,42 @@
 	</url>
 
 	<url>
+	  <loc>http://www.privateersecurity.com/bolo.html</loc>
+	  <lastmod>2021-08-25T02:10:17+00:00</lastmod>
+	</url>
+	
+	<url>
+	  <loc>http://www.privateersecurity.com/ccas.html</loc>
+	  <lastmod>2021-08-25T02:10:17+00:00</lastmod>
+	</url>
+
+	<url>
 	  <loc>http://www.privateersecurity.com/cea.html</loc>
 	  <lastmod>2021-08-25T02:10:17+00:00</lastmod>
 	</url>
 
 	<url>
-	  <loc>http://www.privateersecurity.com/posted.html</loc>
+	  <loc>http://www.privateersecurity.com/employment.html</loc>
+	  <lastmod>2021-08-25T02:10:17+00:00</lastmod>
+	</url>
+
+	<url>
+	  <loc>http://www.privateersecurity.com/ldps.html</loc>
+	  <lastmod>2021-08-25T02:10:17+00:00</lastmod>
+	</url>
+
+	<url>
+	  <loc>http://www.privateersecurity.com/mission.html</loc>
+	  <lastmod>2021-08-25T02:10:17+00:00</lastmod>
+	</url>
+
+	<url>
+	  <loc>http://www.privateersecurity.com/owners.html</loc>
+	  <lastmod>2021-08-25T02:10:17+00:00</lastmod>
+	</url>
+
+	<url>
+	  <loc>http://www.privateersecurity.com/patrol.html</loc>
 	  <lastmod>2021-08-25T02:10:17+00:00</lastmod>
 	</url>
 
@@ -37,8 +65,32 @@
 	</url>
 
 	<url>
-	  <loc>http://www.privateersecurity.com/patrol.html</loc>
+	  <loc>http://www.privateersecurity.com/privacy.html</loc>
 	  <lastmod>2021-08-25T02:10:17+00:00</lastmod>
 	</url>
 
+	<url>
+	  <loc>http://www.privateersecurity.com/soc.html</loc>
+	  <lastmod>2021-08-25T02:10:17+00:00</lastmod>
+	</url>
+
+	<url>
+	  <loc>http://www.privateersecurity.com/software.html</loc>
+	  <lastmod>2021-08-25T02:10:17+00:00</lastmod>
+	</url>
+
+	<url>
+	  <loc>http://www.privateersecurity.com/urs.html</loc>
+	  <lastmod>2021-08-25T02:10:17+00:00</lastmod>
+	</url>
+	
+	<url>
+	  <loc>http://www.privateersecurity.com/vsr.html</loc>
+	  <lastmod>2021-08-25T02:10:17+00:00</lastmod>
+	</url>
+
+	<url>
+	  <loc>http://www.privateersecurity.com/wellness.html</loc>
+	  <lastmod>2021-08-25T02:10:17+00:00</lastmod>
+	</url>
 </urlset>
