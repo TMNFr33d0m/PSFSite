@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BOLO Form</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#submitBtn').click(function() {
+        var data = {
+          name: $('#name').val(),
+          race: $('#race').val(),
+          hairColor: $('#hairColor').val(),
+          height: $('#height').val(),
+          weight: $('#weight').val(),
+          gender: $('#gender').val(),
+          clothingDescription: $('#clothingDescription').val(),
+          transportationDescription: $('#transportationDescription').val(),
+          additionalDetails: $('#additionalDetails').val()
+        };
+
+        $.ajax({
+          type: 'POST',
+          url: 'your-endpoint-url',
+          data: JSON.stringify(data),
+          contentType: 'application/json',
+          success: function(response) {
+            alert('BOLO submitted successfully!');
+          },
+          error: function() {
+            alert('An error occurred while submitting the BOLO.');
+          }
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <h1>BOLO Form</h1>
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" required>
+
+    <label for="race">Race:</label>
+    <input type="text" id="race" required>
+
+    <label for="hairColor">Hair Color:</label>
+    <input type="text" id="hairColor" required>
+
+    <label for="height">Height:</label>
+    <input type="text" id="height" required>
+
+    <label for="weight">Weight:</label>
+    <input type="text" id="weight" required>
+
+    <label for="gender">Gender:</label>
+    <select id="gender" required>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+
+    <label for="clothingDescription">Clothing Description:</label>
+    <textarea id="clothingDescription" required></textarea>
+
+    <label for="transportationDescription">Transportation Description:</label>
+    <textarea id="transportationDescription"></textarea>
+
+    <label for="additionalDetails">Additional Details:</label>
+    <textarea id="additionalDetails"></textarea>
+
+    <button type="button" id="submitBtn">Submit</button>
+  </form>
+</body>
+</html>

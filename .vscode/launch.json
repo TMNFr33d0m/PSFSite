@@ -5,10 +5,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "pwa-chrome",
+            "type": "chrome",
             "request": "launch",
-            "name": "Open posted.html",
-            "file": "d:\\Vault\\Business\\Attanaya Warrior Institute\\Privateer Security Forces\\Website\\posted.html"
+            "name": "Open employment.html",
+            "file": "c:\\Users\\Cody.DRISTUDIOS\\Source\\Repos\\FullSail2\\FrontFacingWebsite\\employment.html"
         }
     ]
 }

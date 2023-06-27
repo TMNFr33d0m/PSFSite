@@ -1,153 +1,672 @@
 <!DOCTYPE html>
     <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-        <head>
-            <script src="content\scripts\main.js" ></script>
-            <!-- Required meta tags -->
-            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-            <meta name="description" content="">
-            <link href="css/common.css" rel="stylesheet" />
-            <link rel="stylesheet" href="https://use.typekit.net/ezy0lnf.css">
-            
-            <!-- Bootstrap CSS -->
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-            <link rel="stylesheet" href="https://use.typekit.net/ezy0lnf.css">
-                
-            <!-- Global site tag (gtag.js) - Google Analytics -->
-            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-205853451-1">
-            </script>
+    <head>
+        <script src="content\scripts\main.js"></script>
+        <!-- Required meta tags -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <link href="css/common.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://use.typekit.net/ezy0lnf.css">
 
-            <script>
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.typekit.net/ezy0lnf.css">
 
-                gtag('config', 'UA-205853451-1');
-            </script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-205853451-1">
+        </script>
 
-            <script type="text/javascript"> 
-                adroll_adv_id = "H2JUWZ5IZNAVJPR7J7HSIX"; 
-                adroll_pix_id = "67A3KGIUIJGU7FH4B5WBI6"; 
-                adroll_version = "2.0";  
-                (function(w, d, e, o, a) { w.__adroll_loaded = true; 
-                w.adroll = w.adroll || []; 
-                w.adroll.f = [ 'setProperties', 'identify', 'track' ]; 
-                var roundtripUrl = "https://s.adroll.com/j/" + adroll_adv_id + "/roundtrip.js"; 
-                for (a = 0; a < w.adroll.f.length; a++) { w.adroll[w.adroll.f[a]] = w.adroll[w.adroll.f[a]] || (function(n) { return function() { w.adroll.push([ n, arguments ]) } })(w.adroll.f[a]) }  e = d.createElement('script');
-                o = d.getElementsByTagName('script')[0]; 
-                e.async = 1; 
-                e.src = roundtripUrl; 
-                o.parentNode.insertBefore(e, o); 
-                })(window, document); 
-                adroll.track("pageView"); 
-            </script> 
+        <!-- Meta Pixel Code -->
+        <script>
+            !function (f, b, e, v, n, t, s) {
+                if (f.fbq) return; n = f.fbq = function () {
+                    n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                };
+                if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+                n.queue = []; t = b.createElement(e); t.async = !0;
+                t.src = v; s = b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t, s)
+            }(window, document, 'script',
+                'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '538218240860955');
+            fbq('track', 'PageView');
+        </script>
 
-            <title>Careers - Become a Privateer</title>
-        </head>
+        <noscript>
+            <img height="1" width="1" style="display:none"
+                 src="https://www.facebook.com/tr?id=538218240860955&ev=PageView&noscript=1" />
+        </noscript>
+        <!-- End Meta Pixel Code -->
 
-        <div id="navbarholder"></div>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-205853451-1');
+        </script>
+
+        <script type="text/javascript">
+            adroll_adv_id = "H2JUWZ5IZNAVJPR7J7HSIX";
+            adroll_pix_id = "67A3KGIUIJGU7FH4B5WBI6";
+            adroll_version = "2.0";
+            (function (w, d, e, o, a) {
+                w.__adroll_loaded = true;
+                w.adroll = w.adroll || [];
+                w.adroll.f = ['setProperties', 'identify', 'track'];
+                var roundtripUrl = "https://s.adroll.com/j/" + adroll_adv_id + "/roundtrip.js";
+                for (a = 0; a < w.adroll.f.length; a++) { w.adroll[w.adroll.f[a]] = w.adroll[w.adroll.f[a]] || (function (n) { return function () { w.adroll.push([n, arguments]) } })(w.adroll.f[a]) } e = d.createElement('script');
+                o = d.getElementsByTagName('script')[0];
+                e.async = 1;
+                e.src = roundtripUrl;
+                o.parentNode.insertBefore(e, o);
+            })(window, document);
+            adroll.track("pageView");
+        </script>
+
+        <style>
+
+            #career-tree {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                position: relative;
+                padding: 20px 0;
+                width: 100%; /* Add this line to make the container as wide as possible */
+                box-sizing: border-box; /* Add this line to ensure the width includes padding */
+            }
+
+            .node {
+                position: relative;
+                display: inline-block;
+                margin-right: 32px;
+                cursor: pointer;
+                width: 200px;
+                height: 200px;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                text-align: center;
+                line-height: 200px;
+                border-radius: 10px;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+                color: white;
+            }
+
+            .parent-node {
+                box-sizing: border-box;
+                width: 280px;
+                height: 280px;
+                background-color: rgba(50, 50, 50, 0.8);
+                color: white;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+                border-radius: 4px;
+                position: relative;
+                margin: 16px;
+                padding: 16px;
+                text-align: center;
+                overflow: visible; /* make sure the child nodes are visible */
+                /* Add these properties */
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+
+            .child-node {
+                box-sizing: border-box;
+                width: 280px;
+                height: 280px;
+                background-color: rgba(50, 50, 50, 0.3);
+                color: black;
+                border-radius: 4px;
+                position: relative;
+                margin: 16px;
+                padding: 16px;
+                text-align: center;
+                overflow: visible; /* make sure the child nodes are visible */
+            }
+
+            .child-nodes {
+                display: none;
+                position: absolute;
+                left: 0;
+                top: 100%;
+                color: white;
+                padding: 10px;
+                z-index: 100;
+                width: 100%;
+            }
+
+
+            .child-node:hover .title {
+                display: none;
+            }
+
+            .child-nodes-active {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 16px;
+            }
+
+
+            .child-node-wrapper {
+                flex-basis: calc(33.3333% - 20px);
+                margin: 10px;
+                display: inline-flex; /* Add this line to make the child-node-wrapper an inline-flex container */
+            }
+
+            .clearfix::after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+            .parent-node:hover .child-nodes {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+            }
+
+            .info-box {
+                display: none;
+                position: relative;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+                height: 100%;
+                background-color: rgba(255, 255, 255, 0.9);
+                padding: 16px;
+                padding-bottom: 32px; /* Green bar height (16px) + extra space (16px) */
+                border-radius: 4px;
+                box-sizing: border-box;
+                overflow-y: auto;
+                /* Add drop shadow */
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            }
+
+            .child-node:hover .info-box {
+                display: block;
+            }
+
+            .description {
+                height: calc(100% - 32px); /* Green bar height (16px) + extra space (16px) */
+                overflow-y: auto;
+            }
+
+            .rate-box {
+                background-color: #4CAF50;
+                color: #fff;
+                font-size: 16px;
+                padding: 8px;
+                border-radius: 4px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                text-align: center;
+            }
+
+
+            #dispatch {
+                background-image: url('images/TeamImages/DispatchTeam.png');
+            }
+
+            .explainer-image {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                opacity: 0.3;
+                object-fit: cover;
+            }
+
+            .rank-image {
+                max-width: 40px;
+                max-height: 40px;
+            }
+
+            #intelligence {
+                background-image: url('images/TeamImages/IntelTeam.png');
+            }
+
+            #privateer {
+                background-image: url('images/TeamImages/Privateer-Pin.png');
+            }
+
+            @media (max-width: 768px) {
+                #career-tree {
+                    align-items: center;
+                }
+
+                .parent-node,
+                .child-node {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin: 16px auto;
+                    width: 90%; /* Adjust the width as needed */
+                }
+
+                .child-nodes {
+                    display: none;
+                    position: absolute;
+                    left: 0;
+                    top: 100%;
+                    background-color: rgba(50, 50, 50, 0.8);
+                    color: white;
+                    padding: 10px;
+                    border-radius: 4px;
+                    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+                    z-index: 100;
+                    width: 100%;
+                }
+
+                .child-node-wrapper {
+                    flex-basis: 100%; /* Change this value to stack child nodes */
+                    margin: 10px;
+                }
+
+                .info-box-wrapper {
+                    left: 50%;
+                    top: calc(100% + 10px); /* Position below the child nodes */
+                    transform: translateX(-50%);
+                }
+
+                #career-tree.child-nodes-active .parent-node:not(:hover) {
+                    margin-bottom: 500px; /* Adjust this value based on the height of your child nodes container */
+                }
+            }
+
+
+        </style>
+
+        <title>Careers - Become a Privateer</title>
+    </head>
 
         <body class="container-fluid font-jenson115r">
 
-            <h1>Becoming A Privateer</h1>
-            <p>
-                Becoming a Privateer is a not just a career. It's a lifestyle. The experience of being a Privateer is like none other in the world. Caught somewhere in limbo between security guard, private military contractor, law enforcement officer, firefighter and paramedic, Privateers engage in a wide range of training outings on a regular basis, and are expected to respond to a wide range of stimuli, from critical, life threatening emergencies to everyday customer service interactions. 
-            </p> 
-            <p> 
-                Being a Privateer isn't easy. It requires courage, grit, determination, and an unbreakable work ethic. A Privateer is pledged not only to our organization, but to themselves, to be the best version of themselves at all times. PSF assists our Privateers in this endeavor by owning our own high tech training academy, equipped with multiple firearms simulators, a hand to hand combat area, a physical training area, a classroom, a medical training and simulation area, and an urban training area. With all of this equipment at our disposal, we strive to keep our Privateers in the training facility, building themselves and their skills, whenever possible. 
-            </p>
-            <h2>The Training:</h2>
-            <p>
-                Privateer Academy is one of the most advanced security academies in the world. We don't say that lightly. We've invested in the latest, most cutting edge firearms and non-lethal situation simulators, medical training devices, and training materials. We're NRA certified instructors in all weapons disciplines, and our instructors are all seasoned veterans. Our academy curriculum <i>starts</i> at <strong>40 hours.</strong> Compare to that state minimum of 8 hours. In this unique 40 hour academy, candidates will perform light physical training, spend extensive time in the classroom learning about law and theory, enter our high tech, cutting edge simulators, enter our combat gym, and spend time in the field with our instructors learning esoteric skills such as security patrol and man tracking.
-            </p>
-            <p>
-                The next 40 hours are almost entirely dedicated to firearms training. Privateers learn to handle and demonstrate proficiency in pistol, rifle and shotgun platforms, and receive NRA certifications in all three disciplines. They spend more time in the classroom learning about use of force law, and more time in the simulators learning about complex scenarios, de-escalation, active shooter response, hostage situations, bomb threats, domestic disputes, and more! Finally, Privateers spend time on the live fire range with all of the weapon platforms, beginning a repeating phase of firearms training that will last the duration of the Privateer's career. 
-            </p>
-            <p>
-                The pay as a Privateer is closely comparable to law enforcement, and far in excess of the security industry average. The equipment we utilize is high tech, top notch equipment that is typically reserved for law enforcement and elite military units. To this end, we view our organization as a collection of elite security professionals, and demand the highest level of performance from our employees. It is difficult to become a Privateer, and maintaining the title requires constant self discipline. 
-            </p>
-            <h2>The Hiring Process</h2>
-            <p>
-                Many security companies are known for hiring "just anybody". It's possible to interview and hire on with most companies in the same day. Due to the nature of our operations at PSF, we must follow a much different process. Our company strives to maintain the public trust, and we believe the only way to mitigate liability is through the stringent training processes we employ. Not everyone is cut out for this training, however, and we aim to mitigate our losses and candidate's disappointment by employing a strict hiring process that demands the best from our candidates. Our hiring process is as follows: 
-                <ul>
-                    <li>Application: Candidates interested in becoming Privateers may <a href="mailto:communication@privateersecurity.com"> submit their resumes to the company via our Email</a>. Our online application process is coming soon!</li>
-                    <li>Preliminary Interview: If the applicant is selected for an interview, applicant will be invited to our headquarters or hiring field office to conduct an in person interview. This will be a formal interview designed to get to know the applicant and evaluate applicant's mannerisms and articulacy. The candidate will also submit all required information for a background investigation at this time. </li>
-                    <li>Background Investigation: If the applicant is selected to move forward in the hiring process, we will conduct a thorough background investigation to determine the applicant's eligibility to earn the title of Privateer. The background investigation will include checks of current and former employment, police, financial, education and military records as well as interviews with references. </li>
-                    <li>Background Interview: After the background investigation is complete, and provided the applicant can move forward in the hiring process, the applicant will be called in for a second interview. This interview will address any questions regarding the findings of the background report, and clarify experience and other historical information. </li>
-                    <li>Psychological Evaluation: A written Psychological exam will be administered to the candidate. </li>
-                    <li>Final Interview: The final interview will be conducted by a member of Command Staff and either the direct supervisor or member of Human Resources Division. The panel will evaluate candidates to assess their interpersonal skills, oral communication skills and qualifications for a Privateer. If successful, the candidate may be given a conditional job offer. </li>
-                    <li>Medical Evaluation: A pre-employment medical screening is required to determine the medical fitness of the candidate. </li>
-                    <li>Privateer Academy: Prior to assignment, candidates will undergo a two week, 80 hour intensive training academy. No current certifications exempt candidates from the academy. During the academy, the physical and mental limits of the candidate will be tested, and the candidate will be subject to washout due to request, injury, or disqualification. </li>
-                    <li>Probationary Period: After graduating the Privateer Academy, there is a 30 day probationary period. During this time, the probationary privateer will be subject to certain restrictions and enhanced oversight, and will embark on "training operations" with supervisors and team leaders to learn the additional skills and routines of his or her specific assignment.</li>
-                    <li>Graduation: After successful completion of the probationary period, the Privateer graduates from probationary status and receives his or her assignments and status as a certified Privateer!</li>
-                </ul>
-            </p>
-            <h3> A message from the owner:</h3>
-            <p>
-                Hi, my name is Cody Betzer, and I am one of the owners a Privateer Security Forces. I have lived a great deal of my life in a uniform of some sort, and a large portion of that has been in the private security field. I also come from a background of recon and intelligence, and I bring a lot of my knowledge from that field to the academy and security company we have built today. We have recognized the hard truths about the private security industry, and we aim to correct them with this company. The days of low pay, long, thankless hours, and untrained slobs in ratty uniforms are GONE in the world we've created here. We're motivated, we love the security industry, and we're not afraid to go where other companies have been terrified to tread. We've worked for these other companies, and we've toiled and suffered at the hands of cowardice and greed. We built this company to fill the gap created by companies who are unwilling to be better by focusing on the obvious functions that improve security effectiveness, and not "getting away with the cheapest expense and the highest income possible". So many companies today cut corners and pinch pennies, so badly, that both the security guards and the clients suffer tremendously. We at PSF are taking a stand. Our company is determined to pay fair, decent wages; to use the best equipment and most cutting edge technology available, and to tread where few companies dare because they are unwilling to risk a financial expenditure. To that end, our company is determined to be the best, not the richest. We will provide the best security, and the best value, to our clients. We will do this because we have the right tools, the best people, and the highest motivation, because we love our jobs and protecting our communities. 
-            </p>
-            <p>
-                I once worked with a guy who told me he applied for his job at the security company we both worked for because he reasoned that the position was the "laziest possible job he could get paid for". Disgusted, I knew right then that there were two types of guards out there: guards that are here to do a good job, and guards that are here just to collect a paycheck. I have no interest in a guard that just wants to collect a paycheck. What we're creating here is not a job where we accept contracts as glorified door men, photographers or human security cameras. Those jobs are for people who are just here to collect a paycheck. And more power to them. That's them, and those companies that hire them. We won't mention their names, but they know who they are. We are different. We're here to do a job. Laziness isn't in our vocabulary. As a security guard, I would walk 8-10 miles a day. I would walk 4-5 as a patrolman, just getting out of my car and patrolling sites on foot. I'm not looking for people who are scared off by those facts. There's a place for those people, but it isn't here. 
-            </p>
-            <p> 
-                In return for the best candidates and their best efforts, we will give you a decent wage you can feed your family and pay your bills with. We will negotiate contracts that ensure you have all the knowledge, tools, and authority to complete your job duties with as little risk and danger as possible. We will ensure you have ample training to do your job, and handle any situation you may encounter. Most importantly, we will support you, and treat you like a valued asset and treasured investment, instead of a disposable tool, which is how I felt at many of the companies I have previously worked at. 
-            </p>
-            <p> 
-                If you feel like you have what it takes to join our family and share our vision, I encourage you to embark on the journey of becoming a Privateer. We're leading the way to a safer community. You should lead with us. 
-            </p>
-        
-            <!-- Option 1: Bootstrap Bundle with Popper -->
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-            <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> 
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+            <div class="introduction-text">
+                <h1>Becoming A Privateer</h1>
+                <p>
+                    Becoming a Privateer is a not just a career. It's a lifestyle. The experience of being a Privateer is like none other in the world. Caught somewhere in limbo between security guard, private military contractor, law enforcement officer, firefighter and paramedic, Privateers engage in a wide range of training outings on a regular basis, and are expected to respond to a wide range of stimuli, from critical, life threatening emergencies to everyday customer service interactions.
+                </p>
+                <p>
+                    Being a Privateer isn't easy. It requires courage, grit, determination, and an unbreakable work ethic. A Privateer is pledged not only to our organization, but to themselves, to be the best version of themselves at all times. PSF assists our Privateers in this endeavor by owning our own high tech training academy, equipped with multiple firearms simulators, a hand to hand combat area, a physical training area, a classroom, a medical training and simulation area, and an urban training area. With all of this equipment at our disposal, we strive to keep our Privateers in the training facility, building themselves and their skills, whenever possible.
+                </p>
+                <h2>The Training:</h2>
+                <p>
+                    Privateer Academy is one of the most advanced security academies in the world. We don't say that lightly. We've invested in the latest, most cutting edge firearms and non-lethal situation simulators, medical training devices, and training materials. We're NRA certified instructors in all weapons disciplines, and our instructors are all seasoned veterans. Our academy curriculum <i>starts</i> at <strong>40 hours.</strong> Compare to that state minimum of 8 hours. In this unique 40 hour academy, candidates will perform light physical training, spend extensive time in the classroom learning about law and theory, enter our high tech, cutting edge simulators, enter our combat gym, and spend time in the field with our instructors learning esoteric skills such as security patrol and man tracking.
+                </p>
+                <p>
+                    The next 40 hours are almost entirely dedicated to firearms training. Privateers learn to handle and demonstrate proficiency in pistol, rifle and shotgun platforms, and receive NRA certifications in all three disciplines. They spend more time in the classroom learning about use of force law, and more time in the simulators learning about complex scenarios, de-escalation, active shooter response, hostage situations, bomb threats, domestic disputes, and more! Finally, Privateers spend time on the live fire range with all of the weapon platforms, beginning a repeating phase of firearms training that will last the duration of the Privateer's career.
+                </p>
+                <p>
+                    The pay as a Privateer is closely comparable to law enforcement, and far in excess of the security industry average. The equipment we utilize is high tech, top notch equipment that is typically reserved for law enforcement and elite military units. To this end, we view our organization as a collection of elite security professionals, and demand the highest level of performance from our employees. It is difficult to become a Privateer, and maintaining the title requires constant self discipline.
+                </p>
+                <h2>The Hiring Process</h2>
+                <p>
+                    Many security companies are known for hiring "just anybody". It's possible to interview and hire on with most companies in the same day. Due to the nature of our operations at PSF, we must follow a much different process. Our company strives to maintain the public trust, and we believe the only way to mitigate liability is through the stringent training processes we employ. Not everyone is cut out for this training, however, and we aim to mitigate our losses and candidate's disappointment by employing a strict hiring process that demands the best from our candidates. Our hiring process is as follows:
+                    <ul>
+                        <li>Application: Candidates interested in becoming Privateers may <a href="application.html"> apply online</a>.</li>
+                        <li>Preliminary Interview: If the applicant is selected for an interview, applicant will be invited to our headquarters or hiring field office to conduct an in person interview. This will be a formal interview designed to get to know the applicant and evaluate applicant's mannerisms and articulacy. The candidate will also submit all required information for a background investigation at this time. </li>
+                        <li>Background Investigation: If the applicant is selected to move forward in the hiring process, we will conduct a thorough background investigation to determine the applicant's eligibility to earn the title of Privateer. The background investigation will include checks of current and former employment, police, financial, education and military records as well as interviews with references. </li>
+                        <li>Background Interview: After the background investigation is complete, and provided the applicant can move forward in the hiring process, the applicant will be called in for a second interview. This interview will address any questions regarding the findings of the background report, and clarify experience and other historical information. </li>
+                        <li>Psychological Evaluation: A written Psychological exam will be administered to the candidate. </li>
+                        <li>Final Interview: The final interview will be conducted by a member of Command Staff and either the direct supervisor or member of Human Resources Division. The panel will evaluate candidates to assess their interpersonal skills, oral communication skills and qualifications for a Privateer. If successful, the candidate may be given a conditional job offer. </li>
+                        <li>Medical Evaluation: A pre-employment medical screening is required to determine the medical fitness of the candidate. </li>
+                        <li>Privateer Academy: Prior to assignment, candidates will undergo a two week, 80 hour intensive training academy. No current certifications exempt candidates from the academy. During the academy, the physical and mental limits of the candidate will be tested, and the candidate will be subject to washout due to request, injury, or disqualification. </li>
+                        <li>Probationary Period: After graduating the Privateer Academy, there is a 30 day probationary period. During this time, the probationary privateer will be subject to certain restrictions and enhanced oversight, and will embark on "training operations" with supervisors and team leaders to learn the additional skills and routines of his or her specific assignment.</li>
+                        <li>Graduation: After successful completion of the probationary period, the Privateer graduates from probationary status and receives his or her assignments and status as a certified Privateer!</li>
+                    </ul>
+                </p>
+            </div>
 
+            <div class="career-tree-title">
+            <h1> Choose Your Path...</h1>
+            </div>
+
+            <!-- Parent Node for entire Career Tree -->
+            <div id="career-tree">
+
+                <!-- Parent node for Privateer -->
+                <div class="parent-node" id="privateer">
+                    <div class="title">Privateer</div>
+                    <div class="child-nodes">
+
+                        <div class="child-node-wrapper">
+                            <!-- Child node for Privateer Recruit -->
+                            <div class="child-node" id="privateer-recruit">
+                                <img class="rank-image" src="images/RankImages/Trainee.jpg" alt="Privateer Recruit">
+                                <div class="title">Privateer Recruit</div>
+                                <div class="info-box">
+                                    <img class="explainer-image" src="images/ExplainerImages/academy0.png" alt="Privateer Recruit">
+                                    <div class="description">
+                                        As a Privateer Recruit, you will be introduced to the basics of our operations and work closely with experienced Privateers. You will learn about asset protection, legal and ethical considerations, communication skills, and the proper use of non-lethal equipment. This position is necessary for those who are new to the industry and need to gain hands-on experience. The training period is rigorous, but the knowledge and skills acquired will set the foundation for your future success.
+                                        <div class="rate-box">Hourly Rate: $13.85 / hr.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="child-node-wrapper">
+                            <!-- Child node for Privateer Apprentice -->
+                            <div class="child-node" id="privateer-apprentice">
+                                <img class="rank-image" src="images/RankImages/Trainee.jpg" alt="Privateer Apprentice">
+                                <div class="title">Privateer Apprentice</div>
+                                <div class="info-box">
+                                    <img class="explainer-image" src="images/ExplainerImages/academy1.png" alt="Privateer Apprentice">
+                                    <div class="description">As a Privateer Apprentice, you will work under the guidance of experienced Privateers to further develop your skills and knowledge. You will be responsible for executing various tasks related to security operations, such as patrolling, asset protection, and effective communication with team members. The Apprentice program will also introduce you to advanced non-lethal weapons and hand-to-hand combat techniques. Your dedication and hard work will prepare you for the next level in your career, and you will be rewarded with a more compensatory rate.</div>
+                                    <div class="rate-box">Hourly Rate: $18.00 / hr.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="child-node-wrapper">
+                            <!-- Child node for Privateer -->
+                            <div class="child-node" id="privateer-basic">
+                                <img class="rank-image" src="images/RankImages/PTR.png" alt="Privateer">
+                                <div class="title">Privateer</div>
+                                <div class="info-box">
+                                    <img class="explainer-image" src="images/ExplainerImages/academy2.jpg" alt="Privateer">
+                                    <div class="description">We will send you through our academy and turn you into a street soldier. You’ll become knowledgeable in the ways of criminal law, asset and life preservation, patrolling and security operations, and of course, hand-to-hand combat, the use of non-lethal weapons such as OC spray, CS gas, Batons, Tasers, and the use of firearms. It’s an 80-hour course, and Privateer training is only paid at $13.50 an hour. It’s indeed paramilitary training, and I’m not going to lie, it can be uncomfortable at times. However, once you graduate and step out under your own strength, you’ll be rewarded with the title of PRIVATEER and a starting rate of <span class="rate-highlight">$21.00 / hr.</span></div>
+                                    <div class="rate-box">Hourly Rate: $21.00 / hr.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="child-node-wrapper">
+                            <!-- Child node for Petty Officer 3rd Class -->
+                            <div class="child-node" id="po3">
+                                <img class="rank-image" src="images/RankImages/PO3.png" alt="Petty Officer 3rd Class">
+                                <div class="title">Petty Officer 3rd Class (PO3)</div>
+                                <div class="info-box">
+                                    <img class="explainer-image" src="po3-image.jpg" alt="PO3">
+                                    <div class="description">As a Petty Officer 3rd Class, you'll begin to take on more responsibilities and leadership roles. You'll be involved in training and guiding junior personnel, as well as participating in more complex security operations. Your skills and knowledge in security and tactics will continue to grow, and you'll contribute to the overall effectiveness of the team.</div>
+                                    <div class="rate-box">Hourly Rate: $21.25 / hr.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="child-node-wrapper">
+                            <!-- Child node for Petty Officer 2nd Class -->
+                            <div class="child-node" id="po2">
+                                <img class="rank-image" src="images/RankImages/PO2.jpg" alt="Petty Officer 2nd Class">
+                                <div class="title">Petty Officer 2nd Class (PO2)</div>
+                                <div class="info-box">
+                                    <img class="explainer-image" src="po2-image.jpg" alt="PO2">
+                                    <div class="description">As a Petty Officer 2nd Class, you'll continue to hone your skills in security and tactics, and take on even more responsibilities within the team. You'll be tasked with managing and training junior personnel, and may also be responsible for coordinating and leading specific security operations. Your expertise in security and tactics will be vital to the success of your team and the organization.</div>
+                                    <div class="rate-box">Hourly Rate: $21.50 / hr.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="child-node-wrapper">
+                            <!-- Child node for Petty Officer 1st Class -->
+                            <div class="child-node" id="po1">
+                                <img class="rank-image" src="images/RankImages/PO1.jpg" alt="Petty Officer 1st Class">
+                                <div class="title">Petty Officer 1st Class (PO1)</div>
+                                <div class="info-box">
+                                    <img src="po1-image.jpg" alt="PO1">
+                                    <div class="description">As a Petty Officer 1st Class, you'll be a seasoned professional in security and tactics. Your leadership skills will be well-developed, and you'll be responsible for training, mentoring, and guiding junior personnel. You'll also be involved in planning and executing complex security operations, ensuring the safety and security of clients and assets.</div>
+                                    <div class="rate-box">Hourly Rate: $21.75 / hr.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="child-node-wrapper">
+                            <!-- Child node for Chief Petty Officer -->
+                            <div class="child-node" id="cpo">
+                                <img class="rank-image" src="images/RankImages/CPO.jpg" alt="Chief Petty Officer">
+                                <div class="title">Chief Petty Officer (CPO)</div>
+                                <div class="info-box">
+                                    <img class="explainer-image" src="cpo-image.jpg" alt="CPO">
+                                    <div class="description">As a Chief Petty Officer, you will be an expert in security and tactics, providing guidance and direction to the entire team. Your responsibilities will include overseeing training programs, planning and executing complex security operations, and ensuring the overall effectiveness of the organization. Your leadership and expertise will be vital in maintaining a high level of performance and professionalism within the team.</div>
+                                    <div class="rate-box">Hourly Rate: $22.00 / hr.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="child-node-wrapper">
+                            <!-- Child node for Senior Chief Petty Officer -->
+                            <div class="child-node" id="scpo">
+                                <img class="rank-image" src="images/RankImages/SCPO.png" alt="Senior Chief Petty Officer">
+                                <div class="title">Senior Chief Petty Officer (SCPO)</div>
+                                <div class="info-box">
+                                    <img class="explainer-image" src="scpo-image.jpg" alt="SCPO">
+                                    <div class="description">As a Senior Chief Petty Officer, you'll be a key leader within the organization, responsible for overseeing multiple teams and coordinating large-scale security operations. Your extensive knowledge and experience in security and tactics will be essential for ensuring the success of these operations, and your leadership skills will be invaluable in guiding and mentoring other team members.</div>
+                                    <div class="rate-box">Hourly Rate: $22.25 / hr.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="child-node-wrapper">
+                            <!-- Child node for Master Chief Petty Officer -->
+                            <div class="child-node" id="mcpo">
+                                <img class="rank-image" src="images/RankImages/MCPO.png" alt="Master Chief Petty Officer">
+                                <div class="title">Master Chief Petty Officer (MCPO)</div>
+                                <div class="info-box">
+                                    <img class="explainer-image" src="mcpo-image.jpg" alt="MCPO">
+                                    <div class="description">As a Master Chief Petty Officer, you'll be at the pinnacle of your field, serving as a top leader and subject matter expert within the organization. Your extensive experience and knowledge in security and tactics will be invaluable in planning and executing large-scale operations, and your leadership skills will be instrumental in the development and success of the entire organization.</div>
+                                    <div class="rate-box">Hourly Rate: $22.50 / hr.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="child-node-wrapper">
+                            <!-- Child node for Command Master Chief Petty Officer -->
+                            <div class="child-node" id="cmcpo">
+                                <img class="rank-image" src="images/RankImages/MCPO.png" alt="Command Master Chief Petty Officer">
+                                <div class="title">Command Master Chief Petty Officer (CMCPO)</div>
+                                <div class="info-box">
+                                    <img class="explainer-image" src="cmcpo-image.jpg" alt="CMCPO">
+                                    <div class="description">As a Command Master Chief Petty Officer, you will hold the highest enlisted rank within the organization. Your leadership, expertise, and extensive experience in security and tactics will be critical for the overall success of the organization. You'll play a key role in strategic planning, policy development, and decision-making. You'll also be responsible for mentoring, guiding, and developing future leaders to ensure the continued success and growth of the organization.</div>
+                                    <div class="rate-box">Hourly Rate: $22.75 / hr.</div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="child-node-wrapper">
+                            <!-- Child node for Lieutenant Junior Grade -->
+                            <div class="child-node" id="ltjg">
+                                <img class="rank-image" src="images/RankImages/LTJG.png" alt="Lieutenant Junior Grade">
+                                <div class="title">Lieutenant Junior Grade (LtJG)</div>
+                                <div class="info-box">
+                                    <img class="explainer-image" src="ltjg-image.jpg" alt="LtJG">
+                                    <div class="description">As a Lieutenant Junior Grade, you'll be a commissioned officer with a focus on leadership and management. Your role will include overseeing security operations, managing personnel, and collaborating with other officers to plan and execute high-level strategic initiatives. Your background in security and tactics, combined with your strong leadership abilities, will be crucial in ensuring the success of your team and the organization.</div>
+                                    <div class="rate-box">Hourly Rate: $23.00 / hr.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="child-node-wrapper">
+                            <!-- Child node for Lieutenant -->
+                            <div class="child-node" id="lt">
+                                <img class="rank-image" src="images/RankImages/LT.png" alt="Lieutenant">
+                                <div class="title">Lieutenant (Lt)</div>
+                                <div class="info-box">
+                                    <img class="explainer-image" src="lt-image.jpg" alt="Lt">
+                                    <div class="description">As a Lieutenant, you'll serve as a key leader within the organization, responsible for overseeing multiple teams and coordinating large-scale security operations. Your extensive knowledge and experience in security and tactics will be essential for ensuring the success of these operations, and your leadership skills will be invaluable in guiding and mentoring other team members. You'll also play a vital role in strategic planning and decision-making at the highest levels.</div>
+                                    <div class="rate-box">Hourly Rate: $23.25 / hr.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="child-node-wrapper">
+                            <!-- Child node for Lieutenant Commander -->
+                            <div class="child-node" id="ltcdr">
+                                <img class="rank-image" src="images/RankImages/LtCdr.jpg" alt="Lieutenant Commander">
+                                <div class="title">Lieutenant Commander (LtCdr)</div>
+                                <div class="info-box">
+                                    <img class="explainer-image" src="ltcdr-image.jpg" alt="LtCdr">
+                                    <div class="description">As a Lieutenant Commander, you'll be a senior commissioned officer responsible for leading large teams, managing complex security operations, and developing strategies to ensure the overall success of the organization. Your deep understanding of security and tactics, combined with your exceptional leadership abilities, will be critical in guiding the organization through challenging situations and ensuring the safety and security of clients and assets.</div>
+                                    <div class="rate-box">Hourly Rate: $23.50 / hr.</div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="child-node-wrapper">
+                            <!-- Child node for Commander -->
+                            <div class="child-node" id="cdr">
+                                <img class="rank-image" src="images/RankImages/CDR.jpg" alt="Commander">
+                                <div class="title">Commander (Cdr)</div>
+                                <div class="info-box">
+                                    <img class="explainer-image" src="cdr-image.jpg" alt="Cdr">
+                                    <div class="description">As a Commander, you'll be a high-ranking commissioned officer responsible for the overall direction, strategy, and performance of the organization. Your exceptional leadership skills and deep understanding of security and tactics will be critical for the development and execution of successful security operations. You'll also work closely with the Captain to ensure that the organization remains profitable and sustainable, adapting to changes in the industry and maintaining a high level of service for clients.</div>
+                                    <div class="rate-box">Hourly Rate: $Profit Dependent</div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="child-node-wrapper">
+                            <!-- Child node for Captain -->
+                            <div class="child-node" id="capt">
+                                <img class="rank-image" src="images/RankImages/CPT.gif" alt="Captain">
+                                <div>Captain (Capt)</div>
+                                <div class="info-box">
+                                    <img class="explainer-image" src="capt-image.jpg" alt="Capt">
+                                    <div class="description">As the Captain, you'll hold the highest commissioned officer rank within the organization. Your extensive experience and expertise in security and tactics, coupled with your exceptional leadership abilities, will be crucial in driving the overall success of the organization. You'll be responsible for shaping the strategic direction of the company, making critical decisions on resource allocation, and ensuring the organization remains profitable and sustainable in a competitive industry. Your guidance and mentorship will be invaluable in developing the next generation of leaders within the organization.</div>
+                                    <div class="rate-box">Hourly Rate: $Profit Dependent</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+
+                <!-- Parent node for Dispatch -->
+                <div class="parent-node" id="dispatch">
+                    <div class="title">Dispatch</div>
+                    <div class="child-nodes">
+                        <!-- Child nodes for Dispatch -->
+                        <div class="child-node-wrapper">
+                            <div class="child-node" id="dispatch-trainee">
+                                <img class="rank-image" src="images/RankImages/WO1.jpg" alt="Dispatch Trainee">
+                                <div class="title">Dispatch Trainee</div>
+                                <div class="info-box">
+                                    <img class="explainer-image" src="images/ExplainerImages/GradGirl.jpg" alt="Trainee">
+                                    <div class="description">You’re pretty much learning and experiencing, making mistakes and asking questions. You won’t be alone much during this time.</div>
+                                    <div class="rate-box">Hourly Rate: $16.00 / hr.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="child-node-wrapper">
+                            <div class="child-node" id="dispatch-i">
+                                <img class="rank-image" src="images/RankImages/WO2.jpg" alt="Dispatch I">
+                                <div class="title">Dispatch I</div>
+                                <div class="info-box">
+                                    <img class="explainer-image" src="images/ExplainerImages/Generic_Dispatcher.jpg" alt="Dispatch I">
+                                    <div class="description">You’re all trained up and rocking as a dispatcher, and getting comfortable in your new role. You feel confident you can provide some type of answer to any question that comes your way on duty.</div>
+                                    <div class="rate-box">Hourly Rate: $16.50 / hr.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="child-node-wrapper">
+                            <div class="child-node" id="dispatch-ii">
+                                <img class="rank-image" src="images/RankImages/WO3.jpg" alt="Dispatch II">
+                                <div class="title">Dispatch II</div>
+                                <div class="info-box">
+                                    <img class="explainer-image" src="images/ExplainerImages/Generic_Dispatcher_Super.jpg" alt="Dispatch II">
+                                    <div class="description">You’ve received training on our in-house software and video editing. You’re now editing videos and reports for officers, and assembling case videos. You may also be making small videos of our encounters for social media. You’re also still simultaneously operating as a dispatcher in the meantime. During this time, you’re also learning a tremendous amount about criminal law, you’re enhancing your land law knowledge, learning about tactics and urban combat resource management, and other subjects necessary to command a paramilitary force from a remote location. You’re considered supervisory over any Dispatch I or Trainee.</div>
+                                    <div class="rate-box">Hourly Rate: $17.00 / hr.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+
+                <!-- Parent node for Intelligence Analyst -->
+                <div class="parent-node" id="intelligence">
+                    <div class="title">Intelligence / Operations Analyst</div>
+                    <div class="child-nodes">
+
+                        <!-- Child node for Intelligence Analyst -->
+                        <div class="child-node-wrapper">
+                            <div class="child-node" id="intelligence-analyst">
+                                <img class="rank-image" src="images/RankImages/WO5.jpg" alt="WO5">
+                                <div class="title">Intelligence / Operations Analyst</div>
+                                <div class="info-box">
+                                    <img class="explainer-image" src="images/ExplainerImages/Generic_IntelAnalyst.jpg" alt="Intelligence Analyst">
+                                    <div class="description">We will send you to school on the clock, and you will become a certified intelligence analyst. You will then begin generating our intelligence profiles, assembling post orders based on field risk analysis, performing said risk analysis yourself at times, and assembling comprehensive intelligence reports for our clients. You will be considered the primary dispatch supervisor as dispatch is often the main vein of information into our company. You would be expected to coordinate high-level strategy at the patrol operations level, and would be highly involved with and at times ultimately responsible for the planning and execution of operations based on your intelligence and tactical decisions.</div>
+                                    <div class="rate-box">Hourly Rate: $18.00 / Hr. +</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+                <div class="clearfix"></div>
+
+                <!-- Load bootstrap, popper and jQuery libraries -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+            <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+            <!-- Initialize BBB badge script -->
             <script type="text/javascript">
                 var bbb = bbb || [];
                 bbb.push(["bbbid", "tucson"]);
                 bbb.push(["bid", "20110415"]);
-                
                 bbb.push(["chk", "7101054F14"]);
                 bbb.push(["pos", "bottom-right"]);
-                
+
                 (function () {
                     var scheme = (("https:" == document.location.protocol) ? "https://" : "http://");
-                    var bbb = document.createElement("script");
-                    bbb.type = "text/javascript";
-                    bbb.async = true;
-                    bbb.src = scheme + "seal-tucson.bbb.org/badge/badge.min.js";
-                    var s = document.getElementsByTagName("script")[0];
-                    s.parentNode.insertBefore(bbb, s);
-
-                    setContent('welcome');
+                    var bbbScript = document.createElement("script");
+                    bbbScript.type = "text/javascript";
+                    bbbScript.async = true;
+                    bbbScript.src = scheme + "seal-tucson.bbb.org/badge/badge.min.js";
+                    var firstScript = document.getElementsByTagName("script")[0];
+                    firstScript.parentNode.insertBefore(bbbScript, firstScript);
                 })();
             </script>
 
-            <script> 
-
-                var slideIndex = 0;
-                showSlides();
-
-                function showSlides() {
-                var i;
-                var slides = document.getElementsByClassName("mySlides");
-                for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
-                }
-                slideIndex++;
-                if (slideIndex > slides.length) {slideIndex = 1}
-                slides[slideIndex-1].style.display = "block";
-                setTimeout(showSlides, 3000); // Change image every 3 seconds
-                }
-
-            </script>
-
+            <!-- Setup event listeners -->
             <script>
-                (function () {
-                    LoadNavBar();
-                })();
+                $(document).ready(function () {
+                    let careerTree = $('#career-tree');
+                    let parentNode = $('.parent-node');
+                    let childNode = $('.child-node');
+                    let timeoutId;
+
+                    // Handle mouseover of parent node
+                    parentNode.on('mouseenter', function () {
+                        clearTimeout(timeoutId);
+                        $(this).find('.child-nodes').stop(true, true).slideDown();
+                        careerTree.height(careerTree.height() + $(this).find('.child-nodes').height() + 10);
+                    });
+
+                    // Handle mouseleave on career tree container
+                    careerTree.on('mouseleave', function () {
+                        timeoutId = setTimeout(() => {
+                            $('.child-nodes').stop(true, true).slideUp();
+                            careerTree.height(careerTree.data('height'));
+                        }, 3000);
+                    });
+
+                    // Handle mouseover/mouseout of child node
+                    childNode.hover(function () {
+                        $(this).find('.info-box').stop(true, true).slideDown();
+                    }, function () {
+                        $(this).find('.info-box').stop(true, true).slideUp();
+                    });
+
+                    // Store original height of career tree on page load
+                    careerTree.data('height', careerTree.height());
+                });
             </script>
 
-
-    </body>
+</body>
 </html>
