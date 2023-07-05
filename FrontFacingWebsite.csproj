@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{61E361D9-EEF4-4B36-9228-4D1C8FDE805A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FrontFacingWebsite</RootNamespace>
+    <AssemblyName>FrontFacingWebsite</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44359</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PublishDatabases>false</PublishDatabases>
+    <LegacyPublishPropertiesPageEnabled>true</LegacyPublishPropertiesPageEnabled>
+    <IncludeIisSettings>false</IncludeIisSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=3.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\FullSail\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\FullSail\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\FullSail\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\FullSail\packages\Microsoft.AspNet.Mvc.5.2.9\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\FullSail\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\FullSail\packages\Microsoft.AspNet.Razor.3.2.9\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\FullSail\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\FullSail\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\FullSail\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\FullSail\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\FullSail\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".well-known\pki-validation\CD6437A825431A34C83FB7DB901D1440.txt" />
+    <Content Include="academy.html" />
+    <Content Include="BingSiteAuth.xml" />
+    <Content Include="bolo.html" />
+    <Content Include="ccas.html" />
+    <Content Include="cea.html" />
+    <Content Include="css\common.css" />
+    <Content Include="css\index.css" />
+    <Content Include="application.html" />
+    <Content Include="employment.html" />
+    <Content Include="favicon.ico" />
+    <Content Include="HeaderWithNav.html" />
+    <Content Include="images\37.jpg" />
+    <Content Include="images\Badge_AtAngle_Darkness.png" />
+    <Content Include="images\BlinkRotator\BlinkAnim1.jpg" />
+    <Content Include="images\BlinkRotator\BlinkAnim2.jpg" />
+    <Content Include="images\CEA_Illustration.png" />
+    <Content Include="images\clipart2463028.png" />
+    <Content Include="images\CodyAndBorderPatrol.png" />
+    <Content Include="images\Cody_BP_InTruck.png" />
+    <Content Include="images\Cody_TeamPic.jpg" />
+    <Content Include="images\drone.png" />
+    <Content Include="images\DSC04531.JPG" />
+    <Content Include="images\DSC04591.JPG" />
+    <Content Include="images\ExplainerImages\academy0.png" />
+    <Content Include="images\ExplainerImages\academy1.png" />
+    <Content Include="images\ExplainerImages\academy2.jpg" />
+    <Content Include="images\ExplainerImages\Generic_Dispatcher.jpg" />
+    <Content Include="images\ExplainerImages\Generic_Dispatcher_Super.jpg" />
+    <Content Include="images\ExplainerImages\Generic_IntelAnalyst.jpg" />
+    <Content Include="images\ExplainerImages\GradGirl.jpg" />
+    <Content Include="images\Ex_Baller.jpg" />
+    <Content Include="images\FullSailLoginImage.png" />
+    <Content Include="images\GeneralAd_1.png" />
+    <Content Include="images\ImageRotator\Academy\MedicalTraining.jpg" />
+    <Content Include="images\ImageRotator\Academy\PhysTraining1.jpg" />
+    <Content Include="images\ImageRotator\Academy\TrackingTraining.jpg" />
+    <Content Include="images\ImageRotator\Academy\TrainingInSimulator.jpg" />
+    <Content Include="images\ImageRotator\Academy\UTG-Map.jpg" />
+    <Content Include="images\ImageRotator\BootsOnGround.jpg" />
+    <Content Include="images\ImageRotator\CarShowPic.jpg" />
+    <Content Include="images\ImageRotator\CBWLight.jpg" />
+    <Content Include="images\ImageRotator\DroneAndPrivateers.jpg" />
+    <Content Include="images\ImageRotator\DroneAtNight.jpg" />
+    <Content Include="images\ImageRotator\DroneCloseUp.jpg" />
+    <Content Include="images\ImageRotator\DroneCloseUp2.jpg" />
+    <Content Include="images\ImageRotator\DroneRemoteControlImage.jpg" />
+    <Content Include="images\ImageRotator\DroneWithRedSmoke.jpg" />
+    <Content Include="images\ImageRotator\KandAwithDrone.jpg" />
+    <Content Include="images\ImageRotator\MikeAndCody.jpg" />
+    <Content Include="images\ImageRotator\PhysTraining1.jpg" />
+    <Content Include="images\ImageRotator\TeamOnPatrol.jpg" />
+    <Content Include="images\ImageRotator\TeamPic.jpg" />
+    <Content Include="images\ImageRotator\TrainingInSimulator.jpg" />
+    <Content Include="images\ImageRotator\TrainingPic- KDandMB.jpg" />
+    <Content Include="images\ImageRotator\UrbanTrackingAtNight.jpg" />
+    <Content Include="images\IMG_20211213_004928274_HDR.jpg" />
+    <Content Include="images\IMG_20220105_100847417_HDR.jpg" />
+    <Content Include="images\IMG_20220517_092554433.jpg" />
+    <Content Include="images\IMG_20220517_142048974_HDR.jpg" />
+    <Content Include="images\IMG_20220517_142101237_HDR.jpg" />
+    <Content Include="images\IMG_20220517_142111734_HDR.jpg" />
+    <Content Include="images\IMG_20220517_144842496_HDR.jpg" />
+    <Content Include="images\IMG_20220517_144846257_HDR.jpg" />
+    <Content Include="images\IMG_20220517_144848842_HDR.jpg" />
+    <Content Include="images\IMG_20220517_145159622_HDR.jpg" />
+    <Content Include="images\IMG_20220517_145451444.jpg" />
+    <Content Include="images\IMG_20220519_132507630_HDR.jpg" />
+    <Content Include="images\IMG_20220929_094642661_HDR.jpg" />
+    <Content Include="images\IMG_20220929_103057328_HDR.jpg" />
+    <Content Include="images\IMG_20220929_103058494_HDR.jpg" />
+    <Content Include="images\IMG_20220929_103059928_HDR.jpg" />
+    <Content Include="images\IMG_20220929_104640585_HDR.jpg" />
+    <Content Include="images\IMG_20220929_112132823.jpg" />
+    <Content Include="images\IMG_20220929_113836_916.jpg" />
+    <Content Include="images\IMG_20220929_113836_923.jpg" />
+    <Content Include="images\IMG_20220929_113836_926.jpg" />
+    <Content Include="images\IMG_20220929_113836_928.jpg" />
+    <Content Include="images\IMG_20220929_113836_930.jpg" />
+    <Content Include="images\IMG_20220929_113836_932.jpg" />
+    <Content Include="images\IMG_20220929_114450451.jpg" />
+    <Content Include="images\IMG_20220929_114642190.jpg" />
+    <Content Include="images\PatrolCarImage.png" />
+    <Content Include="images\PatrolCarImageSmall.png" />
+    <Content Include="images\PatrolServicesConceptPic.png" />
+    <Content Include="images\Private Badge patch.PNG" />
+    <Content Include="images\PrivateerArmedColorSilhouette.png" />
+    <Content Include="images\PrivateerArmedConcealedColorSilhouette.png" />
+    <Content Include="images\PrivateerBadge.png" />
+    <Content Include="images\PrivateerBlackLogo.png" />
+    <Content Include="images\PrivateerBlackLogoShipOnly.png" />
+    <Content Include="images\PrivateerBlinkGif.gif" />
+    <Content Include="images\PrivateerIcon.ico" />
+    <Content Include="images\PrivateerLogo.png" />
+    <Content Include="images\PrivateerTransparentLogo.png" />
+    <Content Include="images\PrivateerWhiteLogo.png" />
+    <Content Include="images\PrivateerWhiteLogoShipOnly.png" />
+    <Content Include="images\Privateer_Self_Image_1_HDR.png" />
+    <Content Include="images\RankImages\CDR.jpg" />
+    <Content Include="images\RankImages\CPO.jpg" />
+    <Content Include="images\RankImages\LT.gif" />
+    <Content Include="images\RankImages\CPT.gif" />
+    <Content Include="images\RankImages\LT.png" />
+    <Content Include="images\RankImages\LtCdr.jpg" />
+    <Content Include="images\RankImages\LTJG.png" />
+    <Content Include="images\RankImages\MCPO.png" />
+    <Content Include="images\RankImages\PO1.gif" />
+    <Content Include="images\RankImages\PO1.jpg" />
+    <Content Include="images\RankImages\PO2.gif" />
+    <Content Include="images\RankImages\PO2.jpg" />
+    <Content Include="images\RankImages\PO3.png" />
+    <Content Include="images\RankImages\PTR.png" />
+    <Content Include="images\RankImages\SCPO.png" />
+    <Content Include="images\RankImages\Trainee.jpg" />
+    <Content Include="images\RankImages\WO1.jpg" />
+    <Content Include="images\RankImages\WO2.jpg" />
+    <Content Include="images\RankImages\WO3.jpg" />
+    <Content Include="images\RankImages\WO4.jpg" />
+    <Content Include="images\RankImages\WO5.jpg" />
+    <Content Include="images\RiSkore-Logo.png" />
+    <Content Include="images\TeamImages\DispatchTeam.png" />
+    <Content Include="images\TeamImages\IntelTeam.png" />
+    <Content Include="images\TeamImages\Privateer-Pin.png" />
+    <Content Include="images\video\DAR_Dashboard_Tutorial.mp4" />
+    <Content Include="images\video\PrivateerAdVideo_Teaser1.mp4" />
+    <Content Include="images\video\PrivateerAnimatedLogo.mp4" />
+    <Content Include="index.html" />
+    <Content Include="ldps.html" />
+    <Content Include="mission.html" />
+    <Content Include="PrivateerIcon.ico" />
+    <Content Include="wellness.html" />
+    <Content Include="owners.html" />
+    <Content Include="patrol.html" />
+    <Content Include="pepsa.html" />
+    <Content Include="posted.html" />
+    <Content Include="privacy.html" />
+    <Content Include="robots.txt" />
+    <Content Include="sitemap.xml" />
+    <Content Include="soc.html" />
+    <Content Include="software.html" />
+    <Content Include="urs.html" />
+    <Content Include="vsr.html" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="web.config" />
+    <None Include=".editorconfig" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Web.Infrastructure">
+      <Version>2.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.3</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51870</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44359/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\FullSail\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\FullSail\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\FullSail\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\FullSail\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "KIbJbs4/SENciNg9C0qZUDwwAdhg9hecDiWDf5+JvOKZLjCTy1ub8BfUhix/fCKXxpoYLKgsYHWDBySS42lfPA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Cody.DRISTUDIOS\\Source\\Repos\\FullSail2\\FrontFacingWebsite\\FrontFacingWebsite.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Cody.DRISTUDIOS\\.nuget\\packages\\microsoft.web.infrastructure\\2.0.0\\microsoft.web.infrastructure.2.0.0.nupkg.sha512",
+    "C:\\Users\\Cody.DRISTUDIOS\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
