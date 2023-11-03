@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-	<head>
-        <script src="content\scripts\main.js" ></script>
-			
+	<head>		
         <!-- Required meta tags -->
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Buy patrol services online using this AI powered web app!">
 		<link href="css/common.css" rel="stylesheet" />
-        <link rel="stylesheet" href="https://use.typekit.net/ezy0lnf.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
 		
         <!-- Bootstrap CSS -->
@@ -35,8 +32,9 @@
 		<noscript>
 			<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=538218240860955&ev=PageView&noscript=1"/>
 		</noscript>
+	    <!-- End Meta Pixel Code -->
 
-	<!-- End Meta Pixel Code -->
+        <!-- adroll code-->
 		<script type="text/javascript"> 
 			adroll_adv_id = "H2JUWZ5IZNAVJPR7J7HSIX"; 
 			adroll_pix_id = "67A3KGIUIJGU7FH4B5WBI6"; 
@@ -54,6 +52,7 @@
 			adroll.track("pageView"); 
 		</script> 
 
+        <!-- Google GTag code-->
         <script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -86,6 +85,14 @@
                         <div class="form-group">
                             <label for="company">Company (optional):</label>
                             <input type="text" id="company" name="company" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="phoneNumber">Phone Number:</label>
+                            <input type="tel" id="phoneNumber" name="phoneNumber" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="address">Site Address:</label>
@@ -153,21 +160,19 @@
                             <label for="grandTotal">Monthly Grand Total:</label>
                             <input type="text" id="grandTotal" name="grandTotal" class="form-control" readonly>
                         </div>
-
-
                         <div class="mt-3"> 
                             <button type="submit" id="buyNowButton" class="btn btn-success">Buy Now</button>
                         </div>
                     </form>
-
-
                 </div>
             </div>
         </div>
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <!-- Option 1: Bootstrap Bundle -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-	<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script> 
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>  
+    <script src="content/scripts/buypatrol.js"></script>
+    <script src="content/scripts/main.js" ></script>
 
 	<script type="text/javascript">
 		var bbb = bbb || [];
@@ -188,231 +193,9 @@
 
 			setContent('welcome');
 		})();
+
 	</script>
 
-    <script>
-        var shifts = [];
-
-        function addShift() {
-            var dayOfWeek = document.getElementById('dayOfWeek').value;
-            var startTime = document.getElementById('startTime').value;
-            var duration = document.getElementById('duration').value;
-
-            var errorMessages = document.getElementById('errorMessages');
-            errorMessages.innerHTML = ''; // Clear any previous error messages
-
-            if (!dayOfWeek) {
-                var alert = document.createElement('div');
-                alert.className = 'alert alert-danger mt-3';
-                alert.textContent = 'Day of week is required.';
-                errorMessages.appendChild(alert);
-                return;
-            }
-
-            if (!startTime) {
-                var alert = document.createElement('div');
-                alert.className = 'alert alert-danger';
-                alert.textContent = 'Start time is required.';
-                errorMessages.appendChild(alert);
-                return;
-            }
-
-            if (!duration) {
-                var alert = document.createElement('div');
-                alert.className = 'alert alert-danger mt-3';
-                alert.textContent = 'Duration is required.';
-                errorMessages.appendChild(alert);
-                return;
-            }
-
-            if (duration < 10 || duration > 60) {
-                var alert = document.createElement('div');
-                alert.className = 'alert alert-danger';
-                alert.textContent = 'Duration must be between 10 and 60 minutes.';
-                errorMessages.appendChild(alert);
-                return;
-            }
-
-            var shift = { dayOfWeek, startTime, duration };
-
-            var newShiftDayNumber = dayOfWeekToNumber(dayOfWeek);
-            var newShiftTime = new Date(`1970-01-01T${startTime}:00Z`);
-
-            var i;
-            for (i = 0; i < shifts.length; i++) {
-                var shiftDayNumber = dayOfWeekToNumber(shifts[i].dayOfWeek);
-                var shiftTime = new Date(`1970-01-01T${shifts[i].startTime}:00Z`);
-
-                if (shiftDayNumber > newShiftDayNumber || (shiftDayNumber === newShiftDayNumber && shiftTime > newShiftTime)) {
-                    break;
-                }
-            }
-
-            shifts.splice(i, 0, shift); // Insert the new shift at the correct position
-
-            var startTimeDate = new Date(`1970-01-01T${startTime}:00Z`); // convert to Date object
-            startTimeDate.setHours(startTimeDate.getHours() + 2); // add two hours
-
-            var newStartTime = startTimeDate.toISOString().substr(11, 5); // convert back to time string
-
-            var option = document.createElement('option');
-            option.text = 'Every ' + dayOfWeek + ', ' + startTime + ' - '+ newStartTime +'(' + duration + ' minutes)';
-            document.getElementById('shifts').add(option);
-
-            calculateTotal();
-        }
-
-        function dayOfWeekToNumber(dayOfWeek) {
-            switch (dayOfWeek.toLowerCase()) {
-                case 'monday': return 1;
-                case 'tuesday': return 2;
-                case 'wednesday': return 3;
-                case 'thursday': return 4;
-                case 'friday': return 5;
-                case 'saturday': return 6;
-                case 'sunday': return 7;
-                default: return 0;
-            }
-        }
-
-        function removeShift() {
-        var shiftsSelect = document.getElementById('shifts');
-        var selectedIndex = shiftsSelect.selectedIndex;
-
-        if (selectedIndex !== -1) {
-            shifts.splice(selectedIndex, 1);
-            shiftsSelect.remove(selectedIndex);
-
-            calculateTotal();
-        }
-    }
-
-        function calculateTotal() {
-
-            var total = shifts.reduce((sum, shift) => sum + shift.duration * 2 * 4.33, 0);
-            document.getElementById('total').value = "$" + total.toFixed(2);
-
-            var xtraDuty = document.getElementById('xtraDuty').checked;
-            var emergencyResponse = document.getElementById('emergencyResponse').checked;
-
-            if (xtraDuty) {
-                total += 139.99;
-                document.getElementById('xtraDutyRequests').style.display = 'block';
-            } else {
-                document.getElementById('xtraDutyRequests').style.display = 'none';
-            }
-
-            if (emergencyResponse) {
-                total += 59.99;
-                document.getElementById('emergencyMessage').style.display = 'block';
-            } else {
-                document.getElementById('emergencyMessage').style.display = 'none';
-            }
-
-            document.getElementById('grandTotal').value = "$" + total.toFixed(2);
-        }
-    
-        function getFormData() {
-            var form = document.getElementById('serviceForm');
-            var formData = new FormData(form);
-            var data = {};
-
-            // Get values from form
-            for (var pair of formData.entries()) {
-                data[pair[0]] = pair[1];
-            }
-
-            // Get values from checkboxes
-            data.xtraDuty = document.getElementById('xtraDuty').checked;
-            data.emergencyResponse = document.getElementById('emergencyResponse').checked;
-
-            // Get value from shifts select
-            var shiftsSelect = document.getElementById('shifts');
-            data.shifts = Array.from(shiftsSelect.options).map(option => option.value);
-
-            return data;       
-    }
-    
-    </script>
-
-    <script>
-
-        window.onload = function() {
-            var data = JSON.parse(localStorage.getItem('formData'));
-            if (data) {
-                // Populate the form fields with the data
-                document.getElementById('firstName').value = data.firstName;
-                document.getElementById('lastName').value = data.lastName;
-                document.getElementById('company').value = data.company;
-                document.getElementById('address').value = data.address;
-                document.getElementById('startDate').value = data.startDate;
-                document.getElementById('dayOfWeek').value = data.dayOfWeek;
-                document.getElementById('startTime').value = data.startTime;
-                document.getElementById('duration').value = data.duration;
-                document.getElementById('total').value = data.total;
-                document.getElementById('xtraDutyRequests').value = data.xtraDutyRequests;
-                document.getElementById('grandTotal').value = data.grandTotal;
-            }
-        };
-
-        $(document).ready(function(){
-            $('[data-toggle="popover"]').popover(); 
-
-            // Get references to the list box and the "Remove Shift" button
-            var listBox = document.getElementById('shifts'); // replace 'listBoxId' with the actual id of your list box
-            var removeShiftButton = document.getElementById('removeShiftButtonId'); // replace 'removeShiftButtonId' with the actual id of your "Remove Shift" button
-
-            // Hide the "Remove Shift" button initially
-            removeShiftButton.style.display = 'none';
-
-            // Add an event listener for the 'change' event on the list box
-            listBox.addEventListener('change', function() {
-                // If a shift is selected, show the "Remove Shift" button, otherwise hide it
-                removeShiftButton.style.display = listBox.selectedIndex >= 0 ? 'inline' : 'none';
-            });
-
-            document.getElementById('buyNowButton').addEventListener('click', function(event) {
-
-                event.preventDefault();
-                var data = getFormData();
-                console.log(data); // log the data to the console for debugging
-
-                 // Save the data to localStorage
-                localStorage.setItem('formData', JSON.stringify(data));
-
-                // Prepare the data for the AJAX call
-                var payload = {
-                    from: 'Patrol Automated Sales <robocop@privateersecurity.com>',
-                    to: 'communication@privateersecurity.com',
-                    subject: 'Sales Request from ' + data.firstName + ' ' + data.lastName,
-                    text: data.firstName + ' ' + data.lastName +  '(Company: ' + data.company + ') has requested the following patrol services: \r\n ' + data.shifts.join(', \r\n ') + ' Beginning on ' + data.startDate + ' at ' + data.address + ' for a total of ' + data.total + ' per month. \r\n \r\n '  + 'X-Tra Duty: ' + data.xtraDuty + '\r \n \r\n ' + 'Emergency Response: ' + data.emergencyResponse + '\r\n \r\n ' + 'Additional Requests: ' + data.xtraDutyRequests + '\r\n \r\n ' + 'Grand Total: ' + data.grandTotal,
-                    html: '<html>No HTML content included in this message.</html>'
-                };
-
-                // Make the AJAX call
-                $.ajax({
-                    // url: 'https://localhost:44380/Sales/ReceivePayload', // Use this URL for local testing
-                    url: 'https://fullsailclientfrontend20220119172206.azurewebsites.net/Sales/ReceivePayload',
-                    type: 'POST',
-                    data: JSON.stringify(payload),
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    success: function(response) {
-                        console.log('Request sent successfully');
-                        window.location.href = 'confirmation.html'; // Redirect to the confirmation page
-                    },
-                    error: function(jqXHR, textStatus, errorThrown) {
-                        console.error('Error sending request:', errorThrown);
-                    }
-                });
-            });
-                
-        });
-
-        (function () {
-            LoadNavBar();
-        })();
-    </script>
 
     </body>
 
