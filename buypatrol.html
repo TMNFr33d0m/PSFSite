@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+        <script src="content\scripts\main.js" ></script>
+			
+        <!-- Required meta tags -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Buy patrol services online using this AI powered web app!">
+		<link href="css/common.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://use.typekit.net/ezy0lnf.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+		
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.typekit.net/ezy0lnf.css">
+			
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-205853451-1"></script>
+
+		<!-- Meta Pixel Code -->
+		<script>
+			!function(f,b,e,v,n,t,s)
+			{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+			n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+			if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+			n.queue=[];t=b.createElement(e);t.async=!0;
+			t.src=v;s=b.getElementsByTagName(e)[0];
+			s.parentNode.insertBefore(t,s)}(window, document,'script',
+			'https://connect.facebook.net/en_US/fbevents.js');
+			fbq('init', '538218240860955');
+			fbq('track', 'PageView');
+		</script>
+
+		<noscript>
+			<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=538218240860955&ev=PageView&noscript=1"/>
+		</noscript>
+
+	<!-- End Meta Pixel Code -->
+		<script type="text/javascript"> 
+			adroll_adv_id = "H2JUWZ5IZNAVJPR7J7HSIX"; 
+			adroll_pix_id = "67A3KGIUIJGU7FH4B5WBI6"; 
+			adroll_version = "2.0";  
+			(function(w, d, e, o, a) { w.__adroll_loaded = true; 
+			w.adroll = w.adroll || []; 
+			w.adroll.f = [ 'setProperties', 'identify', 'track' ]; 
+			var roundtripUrl = "https://s.adroll.com/j/" + adroll_adv_id + "/roundtrip.js"; 
+			for (a = 0; a < w.adroll.f.length; a++) { w.adroll[w.adroll.f[a]] = w.adroll[w.adroll.f[a]] || (function(n) { return function() { w.adroll.push([ n, arguments ]) } })(w.adroll.f[a]) }  e = d.createElement('script');
+			o = d.getElementsByTagName('script')[0]; 
+			e.async = 1; 
+			e.src = roundtripUrl; 
+			o.parentNode.insertBefore(e, o); 
+			})(window, document); 
+			adroll.track("pageView"); 
+		</script> 
+
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-205853451-1');
+        </script>
+
+        <title>Buy Patrol Services Now!</title>
+	</head>
+
+	<div id="navbarholder"></div>
+
+    <body class="container-fluid font-jenson115r">
+        
+        <div class="body">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="text-center">Tell us about your patrol needs!</h1>
+
+                    <form id="serviceForm" class="container mt-3">
+                        <div class="form-group">
+                            <label for="firstName">First Name:</label>
+                            <input type="text" id="firstName" name="firstName" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name:</label>
+                            <input type="text" id="lastName" name="lastName" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company (optional):</label>
+                            <input type="text" id="company" name="company" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Site Address:</label>
+                            <input type="text" id="address" name="address" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="startDate">Date you would like service to start:</label>
+                            <input type="date" id="startDate" name="startDate" class="form-control">
+                        </div>
+
+                        <div class="form-group bg-dark text-white p-3 m-3">
+                                <div class="form-group">
+                                    <h3>Weekly Patrol Schedule Builder</h3>
+                                    <label for="shifts">Scheduled Visits: 
+                                        <i class="fas fa-info-circle" data-toggle="popover" title="Shift Schedule Builder" data-content="Please select a weekly schedule that should repeat. For example, you might choose Monday at 18:15 for 15 minutes, Monday at 22:00 for 15 minutes, Tuesday at 18:15 for 15 minutes, etc."></i>
+                                    </label>
+                                    <select id="shifts" class="form-control" size="4"></select>
+                                </div>
+                                <div class="form-group">
+                                    <button type="button" id="removeShiftButtonId" class="btn btn-danger mt-2 mb-3" onclick="removeShift()">Remove Shift</button>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="dayOfWeek">Day Of Week:</label>
+                                    <select id="dayOfWeek" name="dayOfWeek" class="form-control">
+                                        <option value="Monday">Every Monday</option>
+                                        <option value="Tuesday">Every Tuesday</option>
+                                        <option value="Wednesday">Every Wednesday</option>
+                                        <option value="Thursday">Every Thursday</option>
+                                        <option value="Friday">Every Friday</option>
+                                        <option value="Saturday">Every Saturday</option>
+                                        <option value="Sunday">Every Sunday</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="startTime">Desired 2 hr. window start rime: </label> <i class="fas fa-info-circle" data-toggle="popover" title="Desired Window Start Time" data-content="Please select a time to start the window. For example, you might choose Monday at 18:00, which will result in a window of 18:00 - 20:00. The arrival window is always 2 hours."></i>
+                                    <input type="time" id="startTime" name="startTime" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="duration">Duration of visit (in minutes): </label> <i class="fas fa-info-circle" data-toggle="popover" title="Duration (in minutes)" data-content="Please select a duration for the patrol. For example, if you'd like a 15 minute patrol, enter 15."></i>
+                                    <input type="number" id="duration" name="duration" class="form-control" min="10" max="60">
+                                </div>
+                                <div class="form-group">
+                                    <button type="button" class="btn btn-primary mt-3" onclick="addShift()">Add Shift</button>
+                                </div>
+                                <div id="errorMessages" class="container"></div>
+                        </div>  
+                        
+                        <div class="form-group">
+                            <label for="total">Monthly Total:</label>
+                            <input type="text" id="total" name="total" class="form-control" readonly>
+                        </div>
+
+                        <div class="form-check">
+                            <input type="checkbox" id="xtraDuty" name="xtraDuty" class="form-check-input" onchange="calculateTotal()">
+                            <label class="form-check-label" for="xtraDuty">X-Tra Duty Enhancement:</label>
+                            <textarea id="xtraDutyRequests" name="xtraDutyRequests" class="form-control" style="display: none;" placeholder="Please specify any additional duties required, such as lock/unlock procedures, special patrol directions, specific checkpoint checks, special reporting requests, escorting individuals, or any other security-related tasks. Note that we only perform tasks that fall within the scope of traditional security duties. Each request will be evaluated and we reserve the right to refuse or adjust the rate for tasks that fall outside the norm of security services."></textarea>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="emergencyResponse" name="emergencyResponse" class="form-check-input" onchange="calculateTotal()">
+                            <label class="form-check-label" for="emergencyResponse">24/7 Emergency Response:</label>
+                            <p id="emergencyMessage" style="display: none;">3 visit credits per month selected!</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="grandTotal">Monthly Grand Total:</label>
+                            <input type="text" id="grandTotal" name="grandTotal" class="form-control" readonly>
+                        </div>
+
+
+                        <div class="mt-3"> 
+                            <button type="submit" id="buyNowButton" class="btn btn-success">Buy Now</button>
+                        </div>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script> 
+
+	<script type="text/javascript">
+		var bbb = bbb || [];
+		bbb.push(["bbbid", "tucson"]);
+		bbb.push(["bid", "20110415"]);
+		
+		bbb.push(["chk", "7101054F14"]);
+		bbb.push(["pos", "bottom-right"]);
+		
+		(function () {
+			var scheme = (("https:" == document.location.protocol) ? "https://" : "http://");
+			var bbb = document.createElement("script");
+			bbb.type = "text/javascript";
+			bbb.async = true;
+			bbb.src = scheme + "seal-tucson.bbb.org/badge/badge.min.js";
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(bbb, s);
+
+			setContent('welcome');
+		})();
+	</script>
+
+    <script>
+        var shifts = [];
+
+        function addShift() {
+            var dayOfWeek = document.getElementById('dayOfWeek').value;
+            var startTime = document.getElementById('startTime').value;
+            var duration = document.getElementById('duration').value;
+
+            var errorMessages = document.getElementById('errorMessages');
+            errorMessages.innerHTML = ''; // Clear any previous error messages
+
+            if (!dayOfWeek) {
+                var alert = document.createElement('div');
+                alert.className = 'alert alert-danger mt-3';
+                alert.textContent = 'Day of week is required.';
+                errorMessages.appendChild(alert);
+                return;
+            }
+
+            if (!startTime) {
+                var alert = document.createElement('div');
+                alert.className = 'alert alert-danger';
+                alert.textContent = 'Start time is required.';
+                errorMessages.appendChild(alert);
+                return;
+            }
+
+            if (!duration) {
+                var alert = document.createElement('div');
+                alert.className = 'alert alert-danger mt-3';
+                alert.textContent = 'Duration is required.';
+                errorMessages.appendChild(alert);
+                return;
+            }
+
+            if (duration < 10 || duration > 60) {
+                var alert = document.createElement('div');
+                alert.className = 'alert alert-danger';
+                alert.textContent = 'Duration must be between 10 and 60 minutes.';
+                errorMessages.appendChild(alert);
+                return;
+            }
+
+            var shift = { dayOfWeek, startTime, duration };
+
+            var newShiftDayNumber = dayOfWeekToNumber(dayOfWeek);
+            var newShiftTime = new Date(`1970-01-01T${startTime}:00Z`);
+
+            var i;
+            for (i = 0; i < shifts.length; i++) {
+                var shiftDayNumber = dayOfWeekToNumber(shifts[i].dayOfWeek);
+                var shiftTime = new Date(`1970-01-01T${shifts[i].startTime}:00Z`);
+
+                if (shiftDayNumber > newShiftDayNumber || (shiftDayNumber === newShiftDayNumber && shiftTime > newShiftTime)) {
+                    break;
+                }
+            }
+
+            shifts.splice(i, 0, shift); // Insert the new shift at the correct position
+
+            var startTimeDate = new Date(`1970-01-01T${startTime}:00Z`); // convert to Date object
+            startTimeDate.setHours(startTimeDate.getHours() + 2); // add two hours
+
+            var newStartTime = startTimeDate.toISOString().substr(11, 5); // convert back to time string
+
+            var option = document.createElement('option');
+            option.text = 'Every ' + dayOfWeek + ', ' + startTime + ' - '+ newStartTime +'(' + duration + ' minutes)';
+            document.getElementById('shifts').add(option);
+
+            calculateTotal();
+        }
+
+        function dayOfWeekToNumber(dayOfWeek) {
+            switch (dayOfWeek.toLowerCase()) {
+                case 'monday': return 1;
+                case 'tuesday': return 2;
+                case 'wednesday': return 3;
+                case 'thursday': return 4;
+                case 'friday': return 5;
+                case 'saturday': return 6;
+                case 'sunday': return 7;
+                default: return 0;
+            }
+        }
+
+        function removeShift() {
+        var shiftsSelect = document.getElementById('shifts');
+        var selectedIndex = shiftsSelect.selectedIndex;
+
+        if (selectedIndex !== -1) {
+            shifts.splice(selectedIndex, 1);
+            shiftsSelect.remove(selectedIndex);
+
+            calculateTotal();
+        }
+    }
+
+        function calculateTotal() {
+
+            var total = shifts.reduce((sum, shift) => sum + shift.duration * 2 * 4.33, 0);
+            document.getElementById('total').value = "$" + total.toFixed(2);
+
+            var xtraDuty = document.getElementById('xtraDuty').checked;
+            var emergencyResponse = document.getElementById('emergencyResponse').checked;
+
+            if (xtraDuty) {
+                total += 139.99;
+                document.getElementById('xtraDutyRequests').style.display = 'block';
+            } else {
+                document.getElementById('xtraDutyRequests').style.display = 'none';
+            }
+
+            if (emergencyResponse) {
+                total += 59.99;
+                document.getElementById('emergencyMessage').style.display = 'block';
+            } else {
+                document.getElementById('emergencyMessage').style.display = 'none';
+            }
+
+            document.getElementById('grandTotal').value = "$" + total.toFixed(2);
+        }
+    
+        function getFormData() {
+            var form = document.getElementById('serviceForm');
+            var formData = new FormData(form);
+            var data = {};
+
+            // Get values from form
+            for (var pair of formData.entries()) {
+                data[pair[0]] = pair[1];
+            }
+
+            // Get values from checkboxes
+            data.xtraDuty = document.getElementById('xtraDuty').checked;
+            data.emergencyResponse = document.getElementById('emergencyResponse').checked;
+
+            // Get value from shifts select
+            var shiftsSelect = document.getElementById('shifts');
+            data.shifts = Array.from(shiftsSelect.options).map(option => option.value);
+
+            return data;       
+    }
+    
+    </script>
+
+    <script>
+
+        window.onload = function() {
+            var data = JSON.parse(localStorage.getItem('formData'));
+            if (data) {
+                // Populate the form fields with the data
+                document.getElementById('firstName').value = data.firstName;
+                document.getElementById('lastName').value = data.lastName;
+                document.getElementById('company').value = data.company;
+                document.getElementById('address').value = data.address;
+                document.getElementById('startDate').value = data.startDate;
+                document.getElementById('dayOfWeek').value = data.dayOfWeek;
+                document.getElementById('startTime').value = data.startTime;
+                document.getElementById('duration').value = data.duration;
+                document.getElementById('total').value = data.total;
+                document.getElementById('xtraDutyRequests').value = data.xtraDutyRequests;
+                document.getElementById('grandTotal').value = data.grandTotal;
+            }
+        };
+
+        $(document).ready(function(){
+            $('[data-toggle="popover"]').popover(); 
+
+            // Get references to the list box and the "Remove Shift" button
+            var listBox = document.getElementById('shifts'); // replace 'listBoxId' with the actual id of your list box
+            var removeShiftButton = document.getElementById('removeShiftButtonId'); // replace 'removeShiftButtonId' with the actual id of your "Remove Shift" button
+
+            // Hide the "Remove Shift" button initially
+            removeShiftButton.style.display = 'none';
+
+            // Add an event listener for the 'change' event on the list box
+            listBox.addEventListener('change', function() {
+                // If a shift is selected, show the "Remove Shift" button, otherwise hide it
+                removeShiftButton.style.display = listBox.selectedIndex >= 0 ? 'inline' : 'none';
+            });
+
+            document.getElementById('buyNowButton').addEventListener('click', function(event) {
+
+                event.preventDefault();
+                var data = getFormData();
+                console.log(data); // log the data to the console for debugging
+
+                 // Save the data to localStorage
+                localStorage.setItem('formData', JSON.stringify(data));
+
+                // Prepare the data for the AJAX call
+                var payload = {
+                    from: 'Patrol Automated Sales <robocop@privateersecurity.com>',
+                    to: 'communication@privateersecurity.com',
+                    subject: 'Sales Request from ' + data.firstName + ' ' + data.lastName,
+                    text: data.firstName + ' ' + data.lastName +  '(Company: ' + data.company + ') has requested the following patrol services: \r\n ' + data.shifts.join(', \r\n ') + ' Beginning on ' + data.startDate + ' at ' + data.address + ' for a total of ' + data.total + ' per month. \r\n \r\n '  + 'X-Tra Duty: ' + data.xtraDuty + '\r \n \r\n ' + 'Emergency Response: ' + data.emergencyResponse + '\r\n \r\n ' + 'Additional Requests: ' + data.xtraDutyRequests + '\r\n \r\n ' + 'Grand Total: ' + data.grandTotal,
+                    html: '<html>No HTML content included in this message.</html>'
+                };
+
+                // Make the AJAX call
+                $.ajax({
+                    // url: 'https://localhost:44380/Sales/ReceivePayload', // Use this URL for local testing
+                    url: 'https://fullsailclientfrontend20220119172206.azurewebsites.net/Sales/ReceivePayload',
+                    type: 'POST',
+                    data: JSON.stringify(payload),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function(response) {
+                        console.log('Request sent successfully');
+                        window.location.href = 'confirmation.html'; // Redirect to the confirmation page
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        console.error('Error sending request:', errorThrown);
+                    }
+                });
+            });
+                
+        });
+
+        (function () {
+            LoadNavBar();
+        })();
+    </script>
+
+    </body>
+
+</html>
