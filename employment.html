@@ -65,222 +65,57 @@
         </script>
 
         <style>
-
-            #career-tree {
+            .career-navigator {
                 display: flex;
-                justify-content: center;
                 flex-wrap: wrap;
-                position: relative;
-                padding: 20px 0;
-                width: 100%; /* Add this line to make the container as wide as possible */
-                box-sizing: border-box; /* Add this line to ensure the width includes padding */
+                justify-content: center;
             }
 
-            .node {
-                position: relative;
-                display: inline-block;
-                margin-right: 32px;
-                cursor: pointer;
-                width: 200px;
-                height: 200px;
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center;
-                text-align: center;
-                line-height: 200px;
+            .career-path {
+                margin: 20px;
+                border: 1px solid #ccc;
                 border-radius: 10px;
-                box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-                color: white;
+                overflow: hidden;
             }
 
-            .parent-node {
-                box-sizing: border-box;
-                width: 280px;
-                height: 280px;
-                background-color: rgba(50, 50, 50, 0.8);
+            .path-title {
+                background-color: #004f72;
                 color: white;
-                box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-                border-radius: 4px;
-                position: relative;
-                margin: 16px;
-                padding: 16px;
                 text-align: center;
-                overflow: visible; /* make sure the child nodes are visible */
-                /* Add these properties */
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-            }
-
-            .child-node {
-                box-sizing: border-box;
-                width: 280px;
-                height: 280px;
-                background-color: rgba(50, 50, 50, 0.3);
-                color: black;
-                border-radius: 4px;
-                position: relative;
-                margin: 16px;
-                padding: 16px;
-                text-align: center;
-                overflow: visible; /* make sure the child nodes are visible */
-            }
-
-            .child-nodes {
-                display: none;
-                position: absolute;
-                left: 0;
-                top: 100%;
-                color: white;
                 padding: 10px;
-                z-index: 100;
-                width: 100%;
+                font-size: 20px;
             }
 
-
-            .child-node:hover .title {
-                display: none;
+            .career-item {
+                display: flex;
+                align-items: center;
+                border-top: 1px solid #ccc;
+                padding: 10px;
             }
 
-            .child-nodes-active {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 16px;
+            .career-image {
+                width: 100px;
+                height: 100px;
+                margin-right: 15px;
             }
 
-
-            .child-node-wrapper {
-                flex-basis: calc(33.3333% - 20px);
-                margin: 10px;
-                display: inline-flex; /* Add this line to make the child-node-wrapper an inline-flex container */
+            .career-info {
+                flex-grow: 1;
             }
 
-            .clearfix::after {
-                content: "";
-                display: table;
-                clear: both;
-            }
-
-            .parent-node:hover .child-nodes {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 10px;
-            }
-
-            .info-box {
-                display: none;
-                position: relative;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%, -50%);
-                width: 100%;
-                height: 100%;
-                background-color: rgba(255, 255, 255, 0.9);
-                padding: 16px;
-                padding-bottom: 32px; /* Green bar height (16px) + extra space (16px) */
-                border-radius: 4px;
-                box-sizing: border-box;
-                overflow-y: auto;
-                /* Add drop shadow */
-                box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-            }
-
-            .child-node:hover .info-box {
-                display: block;
+            .title {
+                font-weight: bold;
             }
 
             .description {
-                height: calc(100% - 32px); /* Green bar height (16px) + extra space (16px) */
-                overflow-y: auto;
+                font-size: 14px;
+                margin-top: 5px;
             }
 
-            .rate-box {
-                background-color: #4CAF50;
-                color: #fff;
-                font-size: 16px;
-                padding: 8px;
-                border-radius: 4px;
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                text-align: center;
+            .rate {
+                margin-top: 5px;
+                font-style: italic;
             }
-
-
-            #dispatch {
-                background-image: url('images/TeamImages/DispatchTeam.png');
-            }
-
-            .explainer-image {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                z-index: -1;
-                opacity: 0.3;
-                object-fit: cover;
-            }
-
-            .rank-image {
-                max-width: 40px;
-                max-height: 40px;
-            }
-
-            #intelligence {
-                background-image: url('images/TeamImages/IntelTeam.png');
-            }
-
-            #privateer {
-                background-image: url('images/TeamImages/Privateer-Pin.png');
-            }
-
-            @media (max-width: 768px) {
-                #career-tree {
-                    align-items: center;
-                }
-
-                .parent-node,
-                .child-node {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    margin: 16px auto;
-                    width: 90%; /* Adjust the width as needed */
-                }
-
-                .child-nodes {
-                    display: none;
-                    position: absolute;
-                    left: 0;
-                    top: 100%;
-                    background-color: rgba(50, 50, 50, 0.8);
-                    color: white;
-                    padding: 10px;
-                    border-radius: 4px;
-                    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-                    z-index: 100;
-                    width: 100%;
-                }
-
-                .child-node-wrapper {
-                    flex-basis: 100%; /* Change this value to stack child nodes */
-                    margin: 10px;
-                }
-
-                .info-box-wrapper {
-                    left: 50%;
-                    top: calc(100% + 10px); /* Position below the child nodes */
-                    transform: translateX(-50%);
-                }
-
-                #career-tree.child-nodes-active .parent-node:not(:hover) {
-                    margin-bottom: 500px; /* Adjust this value based on the height of your child nodes container */
-                }
-            }
-
-
         </style>
 
         <title>Careers - Become a Privateer</title>
@@ -288,7 +123,7 @@
 
     <body class="container-fluid font-jenson115r">
         <div id="navbarholder"></div>
-        <div class="introduction-text">
+            <div class="introduction-text">
             <div class="container">
                 <h1>Become a Privateer: Embrace the Extraordinary</h1>
                 <p>Being a Privateer is not just a career - it's a lifestyle. It's an unparalleled experience that combines the roles of a security guard, private military contractor, law enforcement officer, firefighter, and paramedic. Privateers undergo rigorous training to respond to a wide range of stimuli, from critical emergencies to everyday customer interactions.</p>
@@ -309,308 +144,326 @@
                 <h2>The Hiring Process: Selecting the Elite</h2>
                 <p>Unlike many security companies known for quick and casual hiring processes, at PSF, we prioritize public trust and liability mitigation through a stringent selection process. We seek the best candidates who are capable of successfully completing our comprehensive training. Our hiring process adheres to the following steps:</p>
                 
+                <h3>Traditional Hiring Process</h3>
+                <ul> 
+                    <li><strong>Application:</strong> Interested candidates may apply online through our <a href="https://www.ziprecruiter.com/c/Privateer-Security-Forces/Jobs?hiring_company=36f79210" id="jobs_widget_company_link" target="_blank">Job search at Privateer Security Forces</a><script src="https://www.ziprecruiter.com/jobs-widget/v1/96d2176c/all?show_posted_days=0"></script><a href="https://www.ziprecruiter.com/" id="jobs_widget_link_split" target="_blank">Provided by ZipRecruiter</a>.</li>                  
+                    <li><strong>Phone Interview:</strong> Our command staff will call candidates based on the specific skillset of the jobs we need to fill. Please be patient as our positions are in extremely high demand. Not receiving a call does not mean we do not want to hire you, it simply means your skilset may not be exactly what we need at the time.</li>
+                    <ul>
+                        <strong> SELECTION PROCESS </strong>
+                        <li><strong>General Knowledge Test:</strong> Demonstrate your job-related knowledge through a comprehensive questionnaire.</li>
+                        <li><strong>Background Check Initiation:</strong> Presentation of credentials and driver's license.</li>
+                        <li><strong>Physical Training (PT) Assessment:</strong> Includes a 2-mile run, push-ups, and sit-ups.</li>
+                        <li><strong>Team Drill:</strong> Participate in a blue gun exfiltration drill immediately after PT. A brief planning session will be provided.</li>
+                        <li><strong>Firearm Assessment:</strong> Test your skills in our simulator and showcase your knowledge of safety, handling, and basic laws.</li>
+                        <li><strong>Oral Board Interview:</strong> An opportunity to ask questions, share your accomplishments, experiences, and reasons why you are the ideal candidate for Privateer Security Forces.</li>
+                    </ul>
+                    <li><strong>Background Investigation:</strong> Candidates who advance in the process undergo a thorough background investigation, including checks of employment, police, financial, education, and military records, as well as interviews with references.</li>
+                    <li><strong>Background Interview:</strong> Following completion of the background investigation, candidates are called in for a second interview. This interview addresses any questions regarding the background report findings and clarifies the candidate's experience and historical information.</li>
+                    <li><strong>Psychological Evaluation:</strong> Candidates are required to take a written psychological exam.</li>
+                    <li><strong>Final Interview:</strong> The final interview is conducted by a member of the Command Staff, accompanied by either the direct supervisor or a representative from the Human Resources Division. The panel evaluates candidates' interpersonal and oral communication skills, as well as their qualifications as potential Privateers. Successful candidates may receive a conditional job offer.</li>
+                    <li><strong>Medical Evaluation:</strong> Candidates undergo a pre-employment medical screening to determine their fitness for the role of a Privateer.</li>
+                    <li><strong>Privateer Academy:</strong> Prior to assignment, candidates participate in a two-week, 80-hour intensive training academy. Regardless of current certifications, all candidates must complete the academy. It serves as a testing ground for physical and mental limits, and candidates may be subject to washout due to requests, injuries, or disqualification.</li>
+                    <li><strong>Probationary Period:</strong> Upon graduation from the Privateer Academy, candidates shall enter a 30-day probationary period. During this time, probationary Privateers operate under specific restrictions and enhanced oversight. They engage in training operations with supervisors and team leaders, gaining additional skills and acclimating to their specific assignments.</li>
+                    <li><strong>Graduation:</strong> Following successful completion of the probationary period, Privateers graduate from probationary status and receive their assignments, officially becoming certified Privateers!</li>
+                    
+                </ul>
+
+                <h3>Special Hiring Process</h3>
                 <ul>
-                  <li><strong>Application:</strong> Interested candidates may apply online through our <a href="https://www.ziprecruiter.com/c/Privateer-Security-Forces/Jobs?hiring_company=36f79210" id="jobs_widget_company_link" target="_blank">Job search at Privateer Security Forces</a><script src="https://www.ziprecruiter.com/jobs-widget/v1/96d2176c/all?show_posted_days=0"></script><a href="https://www.ziprecruiter.com/" id="jobs_widget_link_split" target="_blank">Provided by ZipRecruiter</a>.</li>
+                  <li><strong>Application:</strong> Special Hiring Applications are usually sourced from our database of previous applicants based on recorded skill sets and necessity.</li>
                   <li><strong>Preliminary Interview:</strong> Selected applicants are invited to our headquarters or hiring field office for an in-person formal interview. This step allows us to assess candidates' demeanor, articulation, and suitability. Applicants will also provide required information for a background investigation.</li>
                   <li><strong>Background Investigation:</strong> Candidates who advance in the process undergo a thorough background investigation, including checks of employment, police, financial, education, and military records, as well as interviews with references.</li>
                   <li><strong>Background Interview:</strong> Following completion of the background investigation, candidates are called in for a second interview. This interview addresses any questions regarding the background report findings and clarifies the candidate's experience and historical information.</li>
                   <li><strong>Psychological Evaluation:</strong> Candidates are required to take a written psychological exam.</li>
                   <li><strong>Final Interview:</strong> The final interview is conducted by a member of the Command Staff, accompanied by either the direct supervisor or a representative from the Human Resources Division. The panel evaluates candidates' interpersonal and oral communication skills, as well as their qualifications as potential Privateers. Successful candidates may receive a conditional job offer.</li>
+                  <li><strong>Physicql Evaluation:</strong> Candidates undergo a rigourous one-on-one fitness test with an instructor to determine their fitness for the role of a Privateer.</li>
                   <li><strong>Medical Evaluation:</strong> Candidates undergo a pre-employment medical screening to determine their fitness for the role of a Privateer.</li>
                   <li><strong>Privateer Academy:</strong> Prior to assignment, candidates participate in a two-week, 80-hour intensive training academy. Regardless of current certifications, all candidates must complete the academy. It serves as a testing ground for physical and mental limits, and candidates may be subject to washout due to requests, injuries, or disqualification.</li>
-                  <li><strong>Probationary Period:</strong> Upon graduation from the Privateer Academy, candidates enter a 30-day probationary period. During this time, probationary Privateers operate under specific restrictions and enhanced oversight. They engage in training operations with supervisors and team leaders, gaining additional skills and acclimating to their specific assignments.</li>
+                  <li><strong>Probationary Period:</strong> Upon graduation from the Privateer Academy, candidates may enter a 30-day probationary period. During this time, probationary Privateers operate under specific restrictions and enhanced oversight. They engage in training operations with supervisors and team leaders, gaining additional skills and acclimating to their specific assignments.</li>
                   <li><strong>Graduation:</strong> Following successful completion of the probationary period, Privateers graduate from probationary status and receive their assignments, officially becoming certified Privateers!</li>
                 </ul>
               </div>
               
-
-        <div class="career-tree-title">
-        <h1> Choose Your Path...</h1>
+              
         </div>
-
-        <!-- Parent Node for entire Career Tree -->
-        <div id="career-tree">
-
-            <!-- Parent node for Privateer -->
-            <div class="parent-node" id="privateer">
-                <div class="title">Privateer</div>
-                <div class="child-nodes">
-
-                    <div class="child-node-wrapper">
-                        <!-- Child node for Privateer Recruit -->
-                        <div class="child-node" id="privateer-recruit">
-                            <img class="rank-image" src="images/RankImages/Trainee.jpg" alt="Privateer Recruit">
-                            <div class="title">Privateer Recruit</div>
-                            <div class="info-box">
-                                <img class="explainer-image" src="images/ExplainerImages/academy0.png" alt="Privateer Recruit">
-                                <div class="description">
-                                    As a Privateer Recruit, you will be introduced to the basics of our operations and work closely with experienced Privateers. You will learn about asset protection, legal and ethical considerations, communication skills, and the proper use of non-lethal equipment. This position is necessary for those who are new to the industry and need to gain hands-on experience. The training period is rigorous, but the knowledge and skills acquired will set the foundation for your future success.
-                                    <div class="rate-box">Hourly Rate: $13.85 / hr.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="child-node-wrapper">
-                        <!-- Child node for Privateer Apprentice -->
-                        <div class="child-node" id="privateer-apprentice">
-                            <img class="rank-image" src="images/RankImages/Trainee.jpg" alt="Privateer Apprentice">
-                            <div class="title">Privateer Apprentice</div>
-                            <div class="info-box">
-                                <img class="explainer-image" src="images/ExplainerImages/academy1.png" alt="Privateer Apprentice">
-                                <div class="description">As a Privateer Apprentice, you will work under the guidance of experienced Privateers to further develop your skills and knowledge. You will be responsible for executing various tasks related to security operations, such as patrolling, asset protection, and effective communication with team members. The Apprentice program will also introduce you to advanced non-lethal weapons and hand-to-hand combat techniques. Your dedication and hard work will prepare you for the next level in your career, and you will be rewarded with a more compensatory rate.</div>
-                                <div class="rate-box">Hourly Rate: $18.00 / hr.</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="child-node-wrapper">
-                        <!-- Child node for Privateer -->
-                        <div class="child-node" id="privateer-basic">
-                            <img class="rank-image" src="images/RankImages/PTR.png" alt="Privateer">
-                            <div class="title">Privateer</div>
-                            <div class="info-box">
-                                <img class="explainer-image" src="images/ExplainerImages/academy2.jpg" alt="Privateer">
-                                <div class="description">We will send you through our academy and turn you into a street soldier. You’ll become knowledgeable in the ways of criminal law, asset and life preservation, patrolling and security operations, and of course, hand-to-hand combat, the use of non-lethal weapons such as OC spray, CS gas, Batons, Tasers, and the use of firearms. It’s an 80-hour course, and Privateer training is only paid at $13.50 an hour. It’s indeed paramilitary training, and I’m not going to lie, it can be uncomfortable at times. However, once you graduate and step out under your own strength, you’ll be rewarded with the title of PRIVATEER and a starting rate of <span class="rate-highlight">$21.00 / hr.</span></div>
-                                <div class="rate-box">Hourly Rate: $21.00 / hr.</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="child-node-wrapper">
-                        <!-- Child node for Petty Officer 3rd Class -->
-                        <div class="child-node" id="po3">
-                            <img class="rank-image" src="images/RankImages/PO3.png" alt="Petty Officer 3rd Class">
-                            <div class="title">Petty Officer 3rd Class (PO3)</div>
-                            <div class="info-box">
-                                <img class="explainer-image" src="images/ExplainerImages/academy2.jpg" alt="PO3">
-                                <div class="description">As a Petty Officer 3rd Class, you'll begin to take on more responsibilities and leadership roles. You'll be involved in training and guiding junior personnel, as well as participating in more complex security operations. Your skills and knowledge in security and tactics will continue to grow, and you'll contribute to the overall effectiveness of the team.</div>
-                                <div class="rate-box">Hourly Rate: $21.25 / hr.</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="child-node-wrapper">
-                        <!-- Child node for Petty Officer 2nd Class -->
-                        <div class="child-node" id="po2">
-                            <img class="rank-image" src="images/RankImages/PO2.jpg" alt="Petty Officer 2nd Class">
-                            <div class="title">Petty Officer 2nd Class (PO2)</div>
-                            <div class="info-box">
-                                <img class="explainer-image" src="images/ExplainerImages/academy2.jpg" alt="PO2">
-                                <div class="description">As a Petty Officer 2nd Class, you'll continue to hone your skills in security and tactics, and take on even more responsibilities within the team. You'll be tasked with managing and training junior personnel, and may also be responsible for coordinating and leading specific security operations. Your expertise in security and tactics will be vital to the success of your team and the organization.</div>
-                                <div class="rate-box">Hourly Rate: $21.50 / hr.</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="child-node-wrapper">
-                        <!-- Child node for Petty Officer 1st Class -->
-                        <div class="child-node" id="po1">
-                            <img class="rank-image" src="images/RankImages/PO1.jpg" alt="Petty Officer 1st Class">
-                            <div class="title">Petty Officer 1st Class (PO1)</div>
-                            <div class="info-box">
-                                <img src="images/ExplainerImages/academy2.jpg" alt="PO1">
-                                <div class="description">As a Petty Officer 1st Class, you'll be a seasoned professional in security and tactics. Your leadership skills will be well-developed, and you'll be responsible for training, mentoring, and guiding junior personnel. You'll also be involved in planning and executing complex security operations, ensuring the safety and security of clients and assets.</div>
-                                <div class="rate-box">Hourly Rate: $21.75 / hr.</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="child-node-wrapper">
-                        <!-- Child node for Chief Petty Officer -->
-                        <div class="child-node" id="cpo">
-                            <img class="rank-image" src="images/RankImages/CPO.jpg" alt="Chief Petty Officer">
-                            <div class="title">Chief Petty Officer (CPO)</div>
-                            <div class="info-box">
-                                <img class="explainer-image" src="images/ExplainerImages/academy2.jpg" alt="CPO">
-                                <div class="description">As a Chief Petty Officer, you will be an expert in security and tactics, providing guidance and direction to the entire team. Your responsibilities will include overseeing training programs, planning and executing complex security operations, and ensuring the overall effectiveness of the organization. Your leadership and expertise will be vital in maintaining a high level of performance and professionalism within the team.</div>
-                                <div class="rate-box">Hourly Rate: $22.00 / hr.</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="child-node-wrapper">
-                        <!-- Child node for Senior Chief Petty Officer -->
-                        <div class="child-node" id="scpo">
-                            <img class="rank-image" src="images/RankImages/SCPO.png" alt="Senior Chief Petty Officer">
-                            <div class="title">Senior Chief Petty Officer (SCPO)</div>
-                            <div class="info-box">
-                                <img class="explainer-image" src="images/ExplainerImages/academy2.jpg" alt="SCPO">
-                                <div class="description">As a Senior Chief Petty Officer, you'll be a key leader within the organization, responsible for overseeing multiple teams and coordinating large-scale security operations. Your extensive knowledge and experience in security and tactics will be essential for ensuring the success of these operations, and your leadership skills will be invaluable in guiding and mentoring other team members.</div>
-                                <div class="rate-box">Hourly Rate: $22.25 / hr.</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="child-node-wrapper">
-                        <!-- Child node for Master Chief Petty Officer -->
-                        <div class="child-node" id="mcpo">
-                            <img class="rank-image" src="images/RankImages/MCPO.png" alt="Master Chief Petty Officer">
-                            <div class="title">Master Chief Petty Officer (MCPO)</div>
-                            <div class="info-box">
-                                <img class="explainer-image" src="images/ExplainerImages/academy2.jpg" alt="MCPO">
-                                <div class="description">As a Master Chief Petty Officer, you'll be at the pinnacle of your field, serving as a top leader and subject matter expert within the organization. Your extensive experience and knowledge in security and tactics will be invaluable in planning and executing large-scale operations, and your leadership skills will be instrumental in the development and success of the entire organization.</div>
-                                <div class="rate-box">Hourly Rate: $22.50 / hr.</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="child-node-wrapper">
-                        <!-- Child node for Command Master Chief Petty Officer -->
-                        <div class="child-node" id="cmcpo">
-                            <img class="rank-image" src="images/RankImages/MCPO.png" alt="Command Master Chief Petty Officer">
-                            <div class="title">Command Master Chief Petty Officer (CMCPO)</div>
-                            <div class="info-box">
-                                <img class="explainer-image" src="images/ExplainerImages/academy2.jpg" alt="CMCPO">
-                                <div class="description">As a Command Master Chief Petty Officer, you will hold the highest enlisted rank within the organization. Your leadership, expertise, and extensive experience in security and tactics will be critical for the overall success of the organization. You'll play a key role in strategic planning, policy development, and decision-making. You'll also be responsible for mentoring, guiding, and developing future leaders to ensure the continued success and growth of the organization.</div>
-                                <div class="rate-box">Hourly Rate: $22.75 / hr.</div>
-
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="child-node-wrapper">
-                        <!-- Child node for Lieutenant Junior Grade -->
-                        <div class="child-node" id="ltjg">
-                            <img class="rank-image" src="images/RankImages/LTJG.png" alt="Lieutenant Junior Grade">
-                            <div class="title">Lieutenant Junior Grade (LtJG)</div>
-                            <div class="info-box">
-                                <img class="explainer-image" src="ltjg-image.jpg" alt="LtJG">
-                                <div class="description">As a Lieutenant Junior Grade, you'll be a commissioned officer with a focus on leadership and management. Your role will include overseeing security operations, managing personnel, and collaborating with other officers to plan and execute high-level strategic initiatives. Your background in security and tactics, combined with your strong leadership abilities, will be crucial in ensuring the success of your team and the organization.</div>
-                                <div class="rate-box">Hourly Rate: $23.00 / hr.</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="child-node-wrapper">
-                        <!-- Child node for Lieutenant -->
-                        <div class="child-node" id="lt">
-                            <img class="rank-image" src="images/RankImages/LT.png" alt="Lieutenant">
-                            <div class="title">Lieutenant (Lt)</div>
-                            <div class="info-box">
-                                <img class="explainer-image" src="lt-image.jpg" alt="Lt">
-                                <div class="description">As a Lieutenant, you'll serve as a key leader within the organization, responsible for overseeing multiple teams and coordinating large-scale security operations. Your extensive knowledge and experience in security and tactics will be essential for ensuring the success of these operations, and your leadership skills will be invaluable in guiding and mentoring other team members. You'll also play a vital role in strategic planning and decision-making at the highest levels.</div>
-                                <div class="rate-box">Hourly Rate: $23.25 / hr.</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="child-node-wrapper">
-                        <!-- Child node for Lieutenant Commander -->
-                        <div class="child-node" id="ltcdr">
-                            <img class="rank-image" src="images/RankImages/LtCdr.jpg" alt="Lieutenant Commander">
-                            <div class="title">Lieutenant Commander (LtCdr)</div>
-                            <div class="info-box">
-                                <img class="explainer-image" src="ltcdr-image.jpg" alt="LtCdr">
-                                <div class="description">As a Lieutenant Commander, you'll be a senior commissioned officer responsible for leading large teams, managing complex security operations, and developing strategies to ensure the overall success of the organization. Your deep understanding of security and tactics, combined with your exceptional leadership abilities, will be critical in guiding the organization through challenging situations and ensuring the safety and security of clients and assets.</div>
-                                <div class="rate-box">Hourly Rate: $23.50 / hr.</div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="child-node-wrapper">
-                        <!-- Child node for Commander -->
-                        <div class="child-node" id="cdr">
-                            <img class="rank-image" src="images/RankImages/CDR.jpg" alt="Commander">
-                            <div class="title">Commander (Cdr)</div>
-                            <div class="info-box">
-                                <img class="explainer-image" src="cdr-image.jpg" alt="Cdr">
-                                <div class="description">As a Commander, you'll be a high-ranking commissioned officer responsible for the overall direction, strategy, and performance of the organization. Your exceptional leadership skills and deep understanding of security and tactics will be critical for the development and execution of successful security operations. You'll also work closely with the Captain to ensure that the organization remains profitable and sustainable, adapting to changes in the industry and maintaining a high level of service for clients.</div>
-                                <div class="rate-box">Hourly Rate: $Profit Dependent</div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="child-node-wrapper">
-                        <!-- Child node for Captain -->
-                        <div class="child-node" id="capt">
-                            <img class="rank-image" src="images/RankImages/CPT.gif" alt="Captain">
-                            <div>Captain (Capt)</div>
-                            <div class="info-box">
-                                <img class="explainer-image" src="capt-image.jpg" alt="Capt">
-                                <div class="description">As the Captain, you'll hold the highest commissioned officer rank within the organization. Your extensive experience and expertise in security and tactics, coupled with your exceptional leadership abilities, will be crucial in driving the overall success of the organization. You'll be responsible for shaping the strategic direction of the company, making critical decisions on resource allocation, and ensuring the organization remains profitable and sustainable in a competitive industry. Your guidance and mentorship will be invaluable in developing the next generation of leaders within the organization.</div>
-                                <div class="rate-box">Hourly Rate: $Profit Dependent</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="clearfix"></div>
-
-            <!-- Parent node for Dispatch -->
-            <div class="parent-node" id="dispatch">
-                <div class="title">Dispatch</div>
-                <div class="child-nodes">
-                    <!-- Child nodes for Dispatch -->
-                    <div class="child-node-wrapper">
-                        <div class="child-node" id="dispatch-trainee">
-                            <img class="rank-image" src="images/RankImages/WO1.jpg" alt="Dispatch Trainee">
-                            <div class="title">Dispatch Trainee</div>
-                            <div class="info-box">
-                                <img class="explainer-image" src="images/ExplainerImages/GradGirl.jpg" alt="Trainee">
-                                <div class="description">You’re pretty much learning and experiencing, making mistakes and asking questions. You won’t be alone much during this time.</div>
-                                <div class="rate-box">Hourly Rate: $16.00 / hr.</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="child-node-wrapper">
-                        <div class="child-node" id="dispatch-i">
-                            <img class="rank-image" src="images/RankImages/WO2.jpg" alt="Dispatch I">
-                            <div class="title">Dispatch I</div>
-                            <div class="info-box">
-                                <img class="explainer-image" src="images/ExplainerImages/Generic_Dispatcher.jpg" alt="Dispatch I">
-                                <div class="description">You’re all trained up and rocking as a dispatcher, and getting comfortable in your new role. You feel confident you can provide some type of answer to any question that comes your way on duty.</div>
-                                <div class="rate-box">Hourly Rate: $16.50 / hr.</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="child-node-wrapper">
-                        <div class="child-node" id="dispatch-ii">
-                            <img class="rank-image" src="images/RankImages/WO3.jpg" alt="Dispatch II">
-                            <div class="title">Dispatch II</div>
-                            <div class="info-box">
-                                <img class="explainer-image" src="images/ExplainerImages/Generic_Dispatcher_Super.jpg" alt="Dispatch II">
-                                <div class="description">You’ve received training on our in-house software and video editing. You’re now editing videos and reports for officers, and assembling case videos. You may also be making small videos of our encounters for social media. You’re also still simultaneously operating as a dispatcher in the meantime. During this time, you’re also learning a tremendous amount about criminal law, you’re enhancing your land law knowledge, learning about tactics and urban combat resource management, and other subjects necessary to command a paramilitary force from a remote location. You’re considered supervisory over any Dispatch I or Trainee.</div>
-                                <div class="rate-box">Hourly Rate: $17.00 / hr.</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        
+        <div class="career-navigator">
             
-            <div class="clearfix"></div>
-
-            <!-- Parent node for Intelligence Analyst -->
-            <div class="parent-node" id="intelligence">
-                <div class="title">Intelligence / Operations Analyst</div>
-                <div class="child-nodes">
-
-                    <!-- Child node for Intelligence Analyst -->
-                    <div class="child-node-wrapper">
-                        <div class="child-node" id="intelligence-analyst">
-                            <img class="rank-image" src="images/RankImages/WO5.jpg" alt="WO5">
-                            <div class="title">Intelligence / Operations Analyst</div>
-                            <div class="info-box">
-                                <img class="explainer-image" src="images/ExplainerImages/Generic_IntelAnalyst.jpg" alt="Intelligence Analyst">
-                                <div class="description">We will send you to school on the clock, and you will become a certified intelligence analyst. You will then begin generating our intelligence profiles, assembling post orders based on field risk analysis, performing said risk analysis yourself at times, and assembling comprehensive intelligence reports for our clients. You will be considered the primary dispatch supervisor as dispatch is often the main vein of information into our company. You would be expected to coordinate high-level strategy at the patrol operations level, and would be highly involved with and at times ultimately responsible for the planning and execution of operations based on your intelligence and tactical decisions.</div>
-                                <div class="rate-box">Hourly Rate: $18.00 / Hr. +</div>
-                            </div>
-                        </div>
+            <div class="career-path">
+                <div class="path-title">Privateer</div>
+                <div class="path-content">
+                <!-- Privateer Recruit -->
+                <div class="career-item">
+                    <img class="career-image" src="images/RankImages/Trainee.jpg" alt="Privateer Recruit">
+                    <div class="career-info">
+                        <div class="title">Privateer Recruit / Trainee </div>
+                        <div class="description">As a Privateer Recruit, you'll embark on a mission to master the fundamental tactics of our operations, working in the trenches alongside battle-hardened Privateers. Your training will encompass strategic asset defense, navigating the minefield of legal and ethical warfare, honing razor-sharp communication tactics, and mastering the arsenal of non-lethal weaponry. This position forms the critical beachhead for greenhorns in the industry, providing the hands-on engagement necessary to forge your skills. Brace yourself for a grueling training regimen; the skills and intel you'll acquire are the bedrock upon which your future victories will be built.</div>
+                        <div class="rate">Hourly Rate: $14.35 / hr</div>
                     </div>
+                </div>
+    
+                <!-- Privateer Apprentice -->
+                <div class="career-item">
+                    <img class="career-image" src="images/RankImages/Trainee.jpg" alt="Privateer Apprentice">
+                    <div class="career-info">
+                        <div class="title">Privateer Apprentice</div>
+                        <div class="description">As a Privateer Apprentice, you will work under the guidance of experienced Privateers to further develop your skills and knowledge. You will be responsible for executing various tasks related to security operations, such as patrolling, asset protection, and effective communication with team members. The Apprentice program will also introduce you to advanced non-lethal weapons and hand-to-hand combat techniques. Your dedication and hard work will prepare you for the next level in your career, and you will be rewarded with a more compensatory rate.</div>
+                        <div class="rate">Hourly Rate: $18.00 / hr</div>
+                    </div>
+                </div>
+    
+                <!-- Example: Privateer -->
+                <div class="career-item">
+                    <img class="career-image" src="images/RankImages/PTR.png" alt="Privateer">
+                    <div class="career-info">
+                        <div class="title">Privateer</div>
+                        <div class="description">As a Vested Privateer, upon successfully navigating the rigorous crucible of your training and proving your mettle, you will emerge battle-ready to operate independently in the field. This milestone in your career will be acknowledged with the honorable designation of PRIVATEER, a title that speaks volumes of your strategic acumen and operational readiness. Alongside this esteemed rank, you will be compensated commensurate with your demonstrated prowess, starting at a rate of $21.00 per hour. This is not merely a paycheck; it's a tangible recognition of your ability to navigate complex situations, execute strategic missions, and uphold the highest standards of our esteemed privateering corps. Welcome to the front lines, Privateer – your journey has just begun.</div>
+                        <div class="rate">Hourly Rate: $21.00 / hr</div>
+                    </div>
+                </div>
+    
+                <!-- Petty Officer 3rd Class -->
+                <div class="career-item">
+                    <img class="career-image" src="images/RankImages/po3.png" alt="Petty Officer 3rd Class">
+                    <div class="career-info">
+                        <div class="title">Petty Officer 3rd Class (PO3)</div>
+                        <div class="description">As a Petty Officer 3rd Class, you'll begin to take on more responsibilities and leadership roles. You'll be involved in training and guiding junior personnel, as well as participating in more complex security operations. Your skills and knowledge in security and tactics will continue to grow, and you'll contribute to the overall effectiveness of the team.</div>
+                        <div class="rate">Hourly Rate: $21.25 / hr</div>
+                    </div>
+                </div>
 
+                <!-- Petty Officer 2nd Class -->
+                <div class="career-item">
+                    <img class="career-image" src="images/RankImages/po2.jpg" alt="Petty Officer 2nd Class">
+                    <div class="career-info">
+                        <div class="title">Petty Officer 2nd Class (PO2)</div>
+                        <div class="description">As a Petty Officer 2nd Class, you are ascending further up the command hierarchy, sharpening your tactical and security expertise while shouldering an even heavier mantle of responsibility. Your role now extends beyond mere execution; you are a strategist, a mentor, and a leader.
+                            Your duties will encompass the critical task of managing and training the raw recruits, molding them into disciplined and efficient operatives. You are the forge upon which their skills are tempered. Furthermore, your strategic acumen will be called upon for the coordination and leadership of specific security operations. In these high-stakes scenarios, your decision-making and tactical prowess will be the difference between success and failure.
+                            Your deepening expertise in security and tactics isn't just an asset—it's the keystone of your team's operational integrity and, by extension, the organization's overall mission success. Petty Officer 2nd Class, you are now a crucial cog in the machinery of our operational effectiveness, with your actions and decisions resonating far beyond the immediate battlefield. Lead with honor and foresight.</div>
+                        <div class="rate">Hourly Rate: $21.50 / hr</div>
+                    </div>
+                </div>
+
+                <!-- Petty Officer 1st Class -->
+                <div class="career-item">
+                    <img class="career-image" src="images/RankImages/po1.jpg" alt="Petty Officer 1st Class">
+                    <div class="career-info">
+                        <div class="title">Petty Officer 1st Class (PO1)</div>
+                        <div class="description">As a Petty Officer 1st Class, you've ascended to a position of formidable expertise and command in security and tactics. Your role is that of a seasoned tactician and a venerated leader, a beacon of wisdom and guidance in the tumult of operations.
+                            Your leadership skills, sharpened and tempered through experience, place you at the forefront of training, mentoring, and steering the development of junior personnel. In your capable hands, these recruits will transform into skilled operatives, ready to face the challenges of our mission.
+                            Your involvement extends to the strategic level, where you will be instrumental in planning and spearheading complex security operations. The safety and security of our clients and assets lie in your hands; your decisions and strategies will ensure that they remain impregnable. Your role is pivotal – you are not just executing missions, you are architecting them.
+                            In this elevated position, Petty Officer 1st Class, you bear the responsibility and honor of maintaining the highest standards of operational excellence. Your actions directly impact the success and reputation of our unit. Lead with vigilance, precision, and unwavering commitment.
+                        </div>
+                        <div class="rate">Hourly Rate: $21.75 / hr</div>
+                    </div>
+                </div>
+
+                <!-- Chief Petty Officer -->
+                <div class="career-item">
+                    <img class="career-image" src="images/RankImages/CPO.jpg" alt="Chief Petty Officer">
+                    <div class="career-info">
+                        <div class="title">Chief Petty Officer (CPO)</div>
+                        <div class="description">As a Chief Petty Officer, you stand at the strategic apex of our security and tactical operations. Your role transcends that of a mere participant; you are a mastermind, a guiding force for the entire team. With expertise honed through years of rigorous experience, you are the cornerstone of wisdom and tactical proficiency in our organization.
+                            Your oversight extends to the comprehensive orchestration of training programs, ensuring that every member of our unit is forged in the crucible of excellence and readiness. You are the architect of our security strategies, meticulously planning and executing complex operations that are the lifeblood of our organizational success.
+                            Moreover, your responsibilities encompass safeguarding the overall operational effectiveness of the team. Your leadership is not just influential – it is integral to maintaining the highest standards of performance and professionalism within our ranks. Your insight, decisiveness, and unwavering command ensure that the team operates like a well-oiled machine, ready to respond to any challenge with precision and expertise.
+                            Chief Petty Officer, your role is critical not just in leading but in elevating our team to unparalleled heights. Your actions and decisions set the tone for excellence, shaping the very future of our organization. Lead with authority, wisdom, and an unwavering commitment to our mission.
+                        </div>
+                        <div class="rate">Hourly Rate: $22.00 / hr</div>
+                    </div>
+                </div>
+
+                <!-- Senior Chief Petty Officer -->
+                <div class="career-item">
+                    <img class="career-image" src="images/RankImages/SCPO.png" alt="Senior Chief Petty Officer">
+                    <div class="career-info">
+                        <div class="title">Senior Chief Petty Officer (SCPO)</div>
+                        <div class="description">As a Senior Chief Petty Officer, your role is tantamount to that of a seasoned general in the theater of security operations. Your leadership extends across multiple teams, each a cog in the larger mechanism of our strategic objectives. Your command is not just over individuals but over entire units, coordinating them like a skilled conductor leading an orchestra in a symphony of tactical precision.
+                            Your vast reservoir of knowledge and experience in security and tactics is the bedrock upon which these large-scale operations are built. You're not just overseeing these missions; you're the strategist plotting their course, ensuring each maneuver and decision aligns with our overarching objectives. Your insight into the nuances of security operations is critical, turning potential vulnerabilities into fortified strengths.
+                            Leadership, in your capacity, goes beyond mere direction; it's about mentorship, inspiring those under your command to exceed their limits. You're the guiding star for your teams, shaping their skills and fortitudes, fostering an environment where wisdom is shared, and excellence is the standard.
+                            Senior Chief Petty Officer, your role is pivotal in the tapestry of our organization's success. Your decisions ripple through the ranks, influencing outcomes and setting precedents. Lead with the foresight of a tactician and the wisdom of a mentor, for in your hands lies the responsibility of shaping not just operations but the future leaders of our organization.
+                               </div>
+                        <div class="rate">Hourly Rate: $22.25 / hr</div>
+                    </div>
+                </div>
+
+                <!-- Master Chief Petty Officer -->
+                <div class="career-item">
+                    <img class="career-image" src="images/RankImages/MCPO.png" alt="Master Chief Petty Officer">
+                    <div class="career-info">
+                        <div class="title">Master Chief Petty Officer (MCPO)</div>
+                        <div class="description">As a Master Chief Petty Officer, you stand at the zenith of your profession, embodying the epitome of leadership and expertise within our organization. Your position is not merely a rank, but a testament to your unwavering commitment, extensive experience, and unparalleled knowledge in the realms of security and tactics.
+                            Your role as a top leader and subject matter expert is critical to the strategic fabric of our operations. You are the mastermind behind planning and executing large-scale operations that are crucial to our mission's success. Your tactical acumen and strategic foresight are the driving forces that turn plans into successful outcomes, ensuring that every operation is executed with precision and efficiency.
+                            Beyond operational leadership, your influence permeates the entire organization. Your leadership skills are instrumental in shaping the future of our teams. You are a mentor to those climbing the ranks, a role model embodying the highest standards of professionalism and excellence. Your insights and guidance forge the next generation of leaders, ensuring the organization's legacy and success continue long into the future.
+                            Master Chief Petty Officer, your role is more than a position; it's a cornerstone upon which the organization's strength and success are built. Lead with the wisdom of a strategist and the insight of a visionary, for your influence shapes not just the present, but the future of our organization.</div>
+                        <div class="rate">Hourly Rate: $22.50 / hr</div>
+                    </div>
+                </div>
+
+                <!-- Command Master Chief Petty Officer -->
+                <div class="career-item">
+                    <img class="career-image" src="images/RankImages/MCPO.png" alt="Command Master Chief Petty Officer">
+                    <div class="career-info">
+                        <div class="title">Command Master Chief Petty Officer (CMDC)</div>
+                        <div class="description">As a Command Master Chief Petty Officer, you will hold the highest enlisted rank within the organization. Your leadership, expertise, and extensive experience in security and tactics will be critical for the overall success of the organization. You'll play a key role in strategic planning, policy development, and decision-making. You'll also be responsible for mentoring, guiding, and developing future leaders to ensure the continued success and growth of the organization.</div>
+                        <div class="rate">Hourly Rate: $22.75 / hr</div>
+                    </div>
+                </div>
+
+            <div> 
+                <!-- Lieutenant Junior Grade -->
+                <div class="career-item">
+                    <img class="career-image" src="images/RankImages/LTJG.png" alt="Lieutenant Junior Grade">
+                    <div class="career-info">
+                        <div class="title">Lieutenant Junior Grade (LtJG)</div>
+                        <div class="description">As a Lieutenant Junior Grade, you step into the arena as a commissioned officer, entrusted with a mandate that blends leadership, management, and strategic foresight. This rank is not just a step in your career ladder; it's a launchpad for your leadership trajectory within the organization.
+                            Your primary theater of operation will encompass the oversight of security operations. Here, your role is multifaceted: you're the tactician plotting operational courses, the leader steering your team through the complexities of each mission, and the guardian ensuring that every operation is executed with precision and tactical superiority.
+                            In the realm of personnel management, your responsibilities are both strategic and interpersonal. You're tasked with marshaling your team's talents, aligning their skills with our operational objectives, and fostering an environment where excellence is the norm. Your leadership is key in building a unit that is cohesive, efficient, and ready to face any challenge.
+                            Collaboration with other officers in planning and executing high-level strategic initiatives is another critical aspect of your role. In these joint operations, your ability to synergize your tactical knowledge with the broader strategic objectives of the organization will be crucial. You're a bridge between the strategic vision of your superiors and the operational execution on the ground.
+                            Your background in security and tactics, honed through rigorous training and practical experience, provides a solid foundation for your decision-making. Combined with your innate leadership abilities, this makes you an invaluable asset in driving the success of your team and, by extension, the organization.
+                            Lieutenant Junior Grade, your commission is a testament to your potential and capabilities. Lead with confidence, embrace the challenges, and chart a course for success that exemplifies the highest standards of our organization.</div>
+                        <div class="rate">Hourly Rate: $23.00 / hr</div>
+                    </div>
+                </div>
+
+                <!-- Lieutenant -->
+                <div class="career-item">
+                    <img class="career-image" src="images/RankImages/LT.png" alt="Lieutenant">
+                    <div class="career-info">
+                        <div class="title">Lieutenant (Lt)</div>
+                        <div class="description">As a Lieutenant, you are positioned at a critical juncture within the organization, commanding a role that demands both tactical acumen and exemplary leadership. Your rank signifies not just authority, but a profound responsibility in steering the course of our operations and the development of our personnel.
+                            Your jurisdiction extends over multiple teams, each a strategic unit under your command. Your duty here is to ensure these teams operate as cohesive, efficient units, ready to tackle the complexities of large-scale security operations. Your leadership is the keystone in this endeavor, shaping and synchronizing their efforts towards the successful execution of our mission objectives.
+                            The extensive knowledge and experience you have garnered in security and tactics are indispensable assets. In the theater of operations, your strategic insights and tactical decisions are crucial in navigating the myriad challenges that arise, turning potential threats into controlled situations, and ensuring the overarching success of each operation.
+                            Your role in mentoring team members is equally vital. As a Lieutenant, you are not just a commander but a mentor, responsible for nurturing the growth and development of those under your command. Your guidance is a beacon, shaping their professional growth and honing their skills to meet the demands of our high-stakes environment.
+                            Furthermore, your involvement in strategic planning and decision-making at the highest levels places you at the vanguard of our organizational direction. Here, your perspective and input are invaluable, contributing to the formulation of strategies that define our operational footprint and our future trajectory.
+                            Lieutenant, your position within the organization is a testament to your leadership, tactical expertise, and strategic vision. Lead with the assurance that comes from experience, guide with the wisdom of a mentor, and decide with the clarity of a strategist. In your hands lies not just the responsibility for present operations, but the shaping of our organization's future.</div>
+                        <div class="rate">Hourly Rate: $23.25 / hr</div>
+                    </div>
+                </div>
+
+                <!-- Lieutenant Commander -->
+                <div class="career-item">
+                    <img class="career-image" src="images/RankImages/LtCdr.jpg" alt="Lieutenant Commander">
+                    <div class="career-info">
+                        <div class="title">Lieutenant Commander (LtCdr)</div>
+                        <div class="description">As a Lieutenant Commander, you ascend to a position of heightened responsibility and strategic importance within our organization. Your rank as a senior commissioned officer places you at the helm of large teams, where your leadership is not just a role but a crucial factor in our operational success and organizational integrity.
+                            Your mission envelope encompasses the management of complex security operations. These operations demand not only tactical precision but also strategic foresight, and your role is pivotal in orchestrating these elements seamlessly. You're tasked with navigating the intricacies of each operation, ensuring that every maneuver aligns with our overarching strategic goals while mitigating risks to the fullest.
+                            Your deep understanding of security and tactics is the backbone of your decision-making process. This expertise, honed through rigorous training and field experience, equips you with the insight necessary to anticipate challenges, counter threats effectively, and exploit strategic opportunities. Your tactical decisions will directly impact the success and safety of the operations you command.
+                            Beyond operational command, your exceptional leadership abilities are key in steering the organization through turbulent and challenging situations. Your guidance is a beacon for your teams, instilling confidence and fostering a culture of excellence and resilience. You are responsible for nurturing the professional growth of your teams, shaping them into units capable of executing high-stakes missions with unwavering competence.
+                            Moreover, as a Lieutenant Commander, your influence extends to the strategic planning and policy formulation aspects of the organization. Your insights and contributions are vital in shaping policies that ensure the safety and security of our clients and assets, as well as the long-term success and sustainability of our operations.
+                            Lieutenant Commander, your role is critical in both the trenches of tactical operations and the strategic echelons of organizational leadership. Lead with the authority of your rank, the wisdom of experience, and the vision of a strategist. Your actions and decisions are the bulwarks that safeguard our mission's success and our organization's legacy.
+                        </div>
+                        <div class="rate">Hourly Rate: $23.50 / hr</div>
+                    </div>
                 </div>
             </div>
 
+                <!-- Commander -->
+                <div class="career-item">
+                    <img class="career-image" src="images/RankImages/CDR.jpg" alt="Commander">
+                    <div class="career-info">
+                        <div class="title">Commander (Cdr) (Executive Officer)</div>
+                        <div class="description">As a Commander, you have reached a pivotal high-rank in our command structure, a position that places you at the very heart of our organization's strategic and operational leadership. In this role, you bear a significant responsibility not just for the direction of specific operations, but for the overarching strategy and performance of the organization.
+                            Your command is characterized by a comprehensive scope of duties. Firstly, you are the strategist, tasked with developing and refining our operational doctrines. Your deep understanding of security and tactics forms the foundation of this role. It's your acumen in these areas that will enable you to devise and execute security operations that are not only successful in their immediate objectives but also align with our long-term strategic goals.
+                            Moreover, your exceptional leadership skills are crucial in guiding the organization through the complex dynamics of our operational environment. You are responsible for steering your teams towards peak performance, ensuring that each member and unit under your command operates with the utmost efficiency and effectiveness. Your leadership fosters a culture of excellence, resilience, and adaptability - qualities essential for the success of our operations.
+                            Collaboration with the Captain is a key aspect of your role. Together, you will work to ensure that the organization remains not just operationally effective but also financially robust. This involves adapting to the ever-evolving landscape of the industry, identifying and seizing opportunities for growth, and overcoming challenges that may arise. Your strategic input will be vital in maintaining and enhancing our profitability and sustainability, ensuring we continue to provide top-tier service to our clients.
+                            As a Commander, your decisions and strategies have far-reaching implications. You are a custodian of our organization's reputation and a key driver of its success. Lead with strategic insight, operational wisdom, and a steadfast commitment to our mission and values. Under your command, the organization is poised to not just navigate the currents of the industry but to set the course for others to follow.
+                        </div>
+                        <div class="rate">Hourly Rate: $Profit Dependent</div>
+                    </div>
+                </div>
+
+                <!-- Captain -->
+                <div class="career-item">
+                    <img class="career-image" src="images/RankImages/CPT.gif" alt="Captain">
+                    <div class="career-info">
+                        <div class="title">Captain (Capt) (Commanding Officer)</div>
+                        <div class="description">As the Captain, you stand at the helm of our organization, embodying the highest commissioned officer rank, a position that demands exceptional leadership, strategic foresight, and operational expertise. Your role is not merely one of command, but of visionary guidance, steering the organization through the complex waters of the security and tactical industry.
+                            Your extensive experience and expertise in security and tactics are the compass by which the organization navigates. These skills are not just tools for operational success; they are critical in shaping our strategic approach, enabling us to outmaneuver competitors and anticipate industry shifts. Your ability to synthesize this knowledge into effective strategies is paramount in maintaining our position at the forefront of the industry.
+                            As the primary architect of the strategic direction of the company, your decisions have profound implications. You are tasked with the judicious allocation of resources, ensuring that every asset, personnel, and technology is optimally utilized to achieve our mission objectives. This responsibility also includes navigating the organization through the financial currents, ensuring profitability, and sustainable growth amidst a competitive landscape.
+                            Your role extends beyond strategy and operations. As the Captain, you are a mentor and a role model. The guidance and mentorship you provide are invaluable assets in cultivating the next generation of leaders within our organization. Your wisdom and experience are the beacons that guide these emerging leaders, shaping them into capable, strategic thinkers who will carry forward the legacy of the organization.
+                            Captain, your leadership is the cornerstone upon which the organization's success is built. Lead with the assurance of your experience, the clarity of your vision, and the unwavering commitment to our mission. Under your command, the organization is poised not just to meet the challenges of today but to shape the security landscape of tomorrow.
+                        </div>
+                        <div class="rate">Hourly Rate: $Profit Dependent</div>
+                    </div>
+                </div>
+                    
+            </div>
+            </div>
+        
+            <div class="career-path">
+                <div class="path-title">Intelligence</div>
+                <div class="path-content">
+    
+                    <!-- Intelligence / Operations Analyst -->
+                    <div class="career-item">
+                        <img class="career-image" src="images/RankImages/WO5.jpg" alt="Intelligence / Operations Analyst">
+                        <div class="career-info">
+                            <div class="title">Intelligence / Operations Analyst</div>
+                            <div class="description">As part of our commitment to operational excellence and strategic superiority, we are investing in your development as a certified intelligence analyst. This endeavor underscores the critical role intelligence plays in our organization's success. Upon completion of your training, your responsibilities will expand significantly, placing you at the nexus of our intelligence and operational capabilities.
+                                As an intelligence analyst, you will be the architect of our intelligence profiles. Your work will involve meticulously assembling and analyzing data to create comprehensive intelligence reports. These reports will not only inform our strategic decisions but also provide our clients with the crucial insights they need to navigate their security landscape.
+                                Your responsibilities will also include conducting field risk analysis and developing post orders. This task demands a keen eye for detail and an ability to synthesize complex information into actionable strategies. Your analyses will directly influence the planning and execution of our field operations, ensuring that they are both effective and aligned with our broader strategic objectives.
+                                As the primary dispatch supervisor, you will be the linchpin in our information flow. Dispatch is the main vein through which intelligence and operational data pulse into our company. Your role in managing this crucial function is pivotal, ensuring that information is not only accurately relayed but also effectively utilized in real-time decision-making.
+                                Furthermore, your involvement in patrol operations will require you to coordinate high-level strategy. Your insights and intelligence will shape the tactical decisions made at this level. In certain situations, you may also be called upon to take the lead in planning and executing operations. This responsibility underscores the trust placed in your judgment and the importance of your role in the operational success of our organization.
+                                Your progression into this role is not just a step forward in your career; it's a significant leap in the operational capabilities of our organization. As you embark on this journey, remember that your decisions and analyses will have a profound impact. You are not just an analyst or a supervisor; you are a strategic asset, integral to our mission's success and our organization's continued excellence.
+                            </div>
+                            <div class="rate">Hourly Rate: $18.00 / Hr. +</div>
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+
+            <div class="career-path">
+                <div class="path-title">Dispatch</div>
+                    <div class="path-content">
+                        <!-- Dispatch Trainee -->
+                        <div class="career-item">
+                            <img class="career-image" src="images/RankImages/WO1.jpg" alt="Dispatch Trainee">
+                            <div class="career-info">
+                                <div class="title">Dispatch Trainee</div>
+                                <div class="description">As a Dispatch Trainee, you are at the initial phase of a crucial and dynamic role within our operational structure. Think of this period as your tactical boot camp for dispatch operations. It's a time dedicated to learning, gaining hands-on experience, and building a solid foundation in the intricacies of dispatch communication and coordination.
+                                    During this phase, making mistakes is not just expected, it's encouraged as a valuable part of the learning process. Each error is a lesson, an opportunity to deepen your understanding and refine your skills. You are encouraged to ask questions, no matter how basic they may seem. Inquiries are the ammunition of learning, essential for your development and proficiency in this role.
+                                    You won't be navigating this terrain solo. Throughout this training period, you'll be accompanied and supported by experienced personnel. Their guidance is your navigational chart, helping you understand the complexities of dispatch operations, from managing communication channels to coordinating responses in real-time scenarios.
+                                    Your role as a Dispatch Trainee is more than just an introductory phase; it's the cornerstone of your future effectiveness in a critical position. The skills and knowledge you acquire now will be instrumental in ensuring that when the time comes for you to operate independently, you'll be fully equipped to handle the demands and challenges of the dispatch role with confidence and competence. Remember, every great strategist started as a learner – your journey is just beginning.</div>
+                                <div class="rate">Hourly Rate: $16.00 / hr</div>
+                            </div>
+                        </div>
+
+                        <!-- Dispatch I -->
+                        <div class="career-item">
+                            <img class="career-image" src="images/RankImages/WO2.jpg" alt="Dispatch I">
+                            <div class="career-info">
+                                <div class="title">Dispatch I</div>
+                                <div class="description">As a Dispatcher I, you've successfully transitioned from the training phase to full operational status in your role. You're now at the controls, a fully-fledged dispatcher, an integral part of our organization's communication and response backbone. This is where your training, skills, and instincts coalesce into action.
+                                    In this role, you're not just operating the dispatch system; you're the linchpin of information flow and response coordination. Your newfound comfort and confidence in this position is a testament to your hard-earned proficiency. It signifies that you're ready to handle the multifaceted challenges of dispatch duties — from managing critical communications to making swift, tactical decisions that impact our operational effectiveness.
+                                    Your readiness to provide answers and solutions to any queries or situations that arise while on duty is crucial. It reflects your understanding of the operational landscape and your ability to think on your feet. Remember, the dispatcher's seat is more than just a workstation; it's a strategic command post. Your actions and decisions can have significant impacts on the outcomes of our operations.
+                                    Dispatcher I, you are now a key player in ensuring that our teams in the field have the information and support they need to execute their missions successfully. Continue to build on this foundation of confidence and competence, and remain vigilant and adaptable. Your role is critical in maintaining the smooth operation and success of our organizational endeavors.</div>
+                                <div class="rate">Hourly Rate: $16.50 / hr</div>
+                            </div>
+                        </div>
+
+                        <!-- Dispatch II -->
+                        <div class="career-item">
+                            <img class="career-image" src="images/RankImages/WO3.jpg" alt="Dispatch II">
+                            <div class="career-info">
+                                <div class="title">Dispatch II</div>
+                                <div class="description">As a Dispatcher II, you've elevated your role within our organization, embracing a multifaceted set of responsibilities that showcase your expanding skill set and deepening knowledge. Your progression in this role is a clear indication of your adaptability and commitment to our mission.
+                                    Your training in our in-house software and video editing has opened new operational dimensions. You're now adept at editing videos and reports for officers, crafting comprehensive case videos that are essential for operational debriefings, legal proceedings, or training purposes. Additionally, your skills extend to creating impactful videos for our social media platforms, a task that not only demands technical proficiency but also a keen understanding of how to effectively communicate our engagements to the public.
+                                    Simultaneously, you continue to operate as a dispatcher, a role that remains vital to our operational framework. Your ability to juggle these dual responsibilities speaks to your organizational skills and your capacity to maintain focus and efficiency under multifaceted demands.
+                                    Your journey through Dispatcher II also involves a deep dive into critical areas of knowledge. You're gaining substantial insights into criminal law and enhancing your understanding of land law, both crucial for informed decision-making and tactical planning. Additionally, your learning extends to tactics and urban combat resource management, essential skills for commanding a paramilitary force from a remote location. This broadening of your expertise is not just academic; it directly enhances your operational capabilities and strategic foresight.
+                                    In this role, you also step into a supervisory position over Dispatcher I and Trainee personnel. This aspect of your role underscores the trust placed in your judgment and leadership. It's your responsibility to guide, mentor, and oversee these team members, ensuring they adhere to our high standards and continue to develop their skills.
+                                    Dispatcher II, your role is a complex tapestry of technical skills, tactical knowledge, and leadership responsibilities. Continue to hone these skills, for they make you an indispensable asset to our organization and a guiding force for those under your command. Your contributions are pivotal to our operational success and the continual strengthening of our team.
+                                </div>
+                                <div class="rate">Hourly Rate: $17.00 / hr</div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
         </div>
-
-        <div class="clearfix"></div>
-
+ 
         <!-- Load bootstrap, popper and jQuery libraries -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.7.1.js"></script> 

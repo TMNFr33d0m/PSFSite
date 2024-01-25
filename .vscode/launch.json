@@ -17,14 +17,6 @@
             "request": "launch",
             "name": "Launch From Index",
             "file": "C:\\Users\\CodyBetzer\\source\\repos\\TMNFr33d0m\\PSFSite\\index.html"
-        },
-        {
-            "type": "firefox",
-            "request": "launch",
-            "name": "Launch Firefox",
-            "file": "${workspaceFolder}/index.html"
         }
-
-
     ]
 }
