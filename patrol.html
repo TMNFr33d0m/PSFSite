@@ -63,79 +63,115 @@
     <title>Patrol Services - The core of PSF Operations</title>
 </head>
 
+<style>
+    body {
+        background-color: #f8f9fa; /* Light background color */
+    }
+
+    h1, h2, h3 {
+        color: #343a40; /* Dark text color for headings */
+    }
+
+    section {
+        background-color: #ffffff; /* White background for sections */
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for sections */
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .btn-success {
+        background-color: #28a745; /* Green color for Buy Online button */
+        border-color: #28a745;
+    }
+
+    .btn-success:hover {
+        background-color: #218838;
+        border-color: #1e7e34;
+    }
+</style>
+
     <div id="navbarholder"></div>
 
     <body class="container-fluid font-jenson115r">
-        <div class="container mt-5">
+        <div class="container my-4">
 
-            <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
-                <img src="images\ImageRotator\Main\MainPage_IntroSlide2.png" class="img-fluid" alt="Responsive image" style="max-width: 100%;">
-            </div>    
-
-            <h1 class="text-center font-weight-bold">Privateer Patrol Services: Unbeatable Security, Unmatched Technology</h1>
-
-            <section id="intro" class="mt-4">
+            <!-- Image Section -->
+            <div class="row mb-4">
+                <div class="col text-center">
+                    <img src="images/ImageRotator/Main/MainPage_IntroSlide2.png" class="img-fluid" style="max-height: 600px;" alt="Responsive image" />
+                </div>
+            </div>
+        
+            <!-- Main Header -->
+            <h1 class="text-center mb-4">Privateer Patrol Services: Unbeatable Security, Unmatched Technology</h1>
+        
+            <!-- Introduction Section -->
+            <div id="intro" class="mb-4">
                 <p class="lead text-center">
                     Elevate your security experience with Privateer's Elite Patrol Services. We're the only security company in Arizona that blends cutting-edge technology with world-class personnel. Customize your patrol duration, amplify your security, and experience peace like never before.
                 </p>
-            </section>
-
-            <section id="investment" class="mt-4">
-                <h2 class="font-weight-bold">The Privateer Advantage</h2>
+            </div>
+        
+            <!-- Content Sections -->
+            <section id="investment" class="mb-4">
+                <h2>The Privateer Advantage</h2>
                 <p>
                     Our Patrol Specialists come equipped with the pinnacle of security technology. Capture every moment with our 4K Ultra-Clear HALO Body Cams and In-Vehicle Vantage Dash Cameras. Be in the know, be in the clear.
                 </p>
             </section>
-
-            <section id="communication" class="mt-4">
-                <h2 class="font-weight-bold">Skyline Communication Hub</h2>
+        
+            <section id="communication" class="mb-4">
+                <h2>Skyline Communication Hub</h2>
                 <p>
                     Stay connected with our revolutionary PTTOC Radios operating on a robust 5G network. Backed by our 24/7 Live Dispatch Center, our communication ecosystem leaves no room for errors. 
                 </p>
             </section>
-
-            <section id="vehicleTech" class="mt-4">
-                <h2 class="font-weight-bold">Rolling Fortresses</h2>
+        
+            <section id="vehicleTech" class="mb-4">
+                <h2>Rolling Fortresses</h2>
                 <p>
                     Every patrol vehicle is a beacon of security featuring state-of-the-art IllumiGuard Lighting Technology, visible from miles away. Packed with our Full Sail Onboard Computing, benefit from real-time GPS, digital reporting, and instant license plate recognition.
                 </p>
             </section>
-
-            <section id="droneTech" class="mt-4">
-                <h2 class="font-weight-bold">Eagle Eye Drone Patrols</h2>
+        
+            <section id="droneTech" class="mb-4">
+                <h2>Eagle Eye Drone Patrols</h2>
                 <p>
                     Our Patrol Specialists have the sky on their side with our pocket-sized DJI Mavic Mini 2 Drones. Providing aerial reconnaissance on-demand, we give you an all-seeing eye.
                 </p>
             </section>
-
-            <section id="pricing" class="mt-4">
-                <h2 class="font-weight-bold">Tailored & Transparent Pricing</h2>
+        
+            <section id="pricing" class="mb-4">
+                <h2>Tailored & Transparent Pricing</h2>
                 <p>
                     Our patrols are flexible, customizable and sold by the minute. Pay only for what you need. Encounter an incident? Our unique Incident Blocks and Flat Rate Fees ensure you never face any insurmountable financial surprises due to security incidents.
                 </p>
             </section>
-
-            <section id="addOns" class="mt-4">
-                <h2 class="font-weight-bold">Add-Ons for Comprehensive Security</h2>
+        
+            <!-- Add-Ons Section -->
+            <section id="addOns" class="mb-4">
+                <h2 class="bg-dark text-white p-1">Add-Ons for Comprehensive Security</h2>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 mb-3">
                         <h3>X-Tra Duty Enhancement</h3>
                         <p>Extend your patrol's capabilities for just $139.99 a month. From lock-up procedures to hauling valuable assets, we redefine the scope of a patrol service.</p>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 mb-3">
                         <h3>24/7 Emergency Response</h3>
                         <p>Get three on-demand patrol visits anytime for just $59.99 a month. From burglar alarms to emergency incidents, we guarantee rapid response and resolution.</p>
                     </div>
                 </div>
             </section>
-
-            <section class="mb-3"> 
-                <h2>Buy Online!</h2>
-                <p>Our Patrol Services are available for purchase online. Click the button below to get started!</p>
-                <a href="buypatrol.html" class="btn btn-primary btn-lg m-3">Buy Online!</a>
+        
+            <!-- Online Purchase Section -->
+            <section class="text-center mb-4"> 
+                <h2 class="mb-3">Buy Online!</h2>
+                <p class="mb-3">Our Patrol Services are available for purchase online. Click the button below to get started!</p>
+                <a href="buypatrol.html" class="btn btn-lg btn-success shadow-lg" style="font-size: 1.2rem; padding: 15px 30px;">Buy Online!</a>
             </section>
-
-        </div>
+        
+        </div>       
 
         <!-- Option 1: Bootstrap Bundle with Popper -->
 
