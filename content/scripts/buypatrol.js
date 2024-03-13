@@ -295,7 +295,7 @@ function AddButtonEmailAction(event) {
         dataType: "json",
         success: function (response) {
             console.log('Request sent successfully');
-            window.location.href = 'confirmation.html'; // Redirect to the confirmation page
+            window.location.href = 'pprconf.html'; // Redirect to the confirmation page
         },
         error: function (jqXHR, textStatus, errorThrown) {
             console.error('Error sending request:', errorThrown);
